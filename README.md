@@ -30,5 +30,34 @@ CRUD 실습 : https://docs.google.com/presentation/d/1asseIeW2bB0sUSlYN3cPtzrQC0
 
 
 
+--- 
+
+### 블로그 작성시 참고 
+
+https://sorktjrrb.tistory.com/
+
+https://luvris2.tistory.com/
+
+https://vision-ai.tistory.com/
+
+https://hyunsungstory.tistory.com/
+
+https://coding-jisu.tistory.com/
+
+https://mscha.tistory.com/
+
+https://story-jy.tistory.com/
+
+https://hanul0147.tistory.com/
+
+https://dbfoot.tistory.com/
+
+https://jkonghg.wixsite.com/everywork
+
+https://hanul0147.tistory.com/
+
+https://pfshin2.tistory.com/
+
+
 
 
