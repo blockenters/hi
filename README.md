@@ -28,7 +28,11 @@ HTML, CSS, Javascript 란 : https://docs.google.com/document/d/12-4-Y2BKF3jdU1oY
 
 CRUD 실습 : https://docs.google.com/presentation/d/1asseIeW2bB0sUSlYN3cPtzrQC0qF07GnKa0NzQ64IPM/edit?usp=sharing
 
+SQL 강의 데이터1 : https://drive.google.com/file/d/1M7FJzRK-qxZWG26gbLnTC7_ed7BQk3Au/view?usp=sharing
 
+문자열 실습 : https://docs.google.com/presentation/d/1KDGanQPmG1V43rGJbqK8atGsXtkXNinWFPVxCXoaz5o/edit?usp=sharing
+
+SQL 강의 데이터2 : https://drive.google.com/file/d/1q2Lm-BhpwF7S_5Cwskqv2SgHXkiFNug-/view?usp=sharing
 
 --- 
 
