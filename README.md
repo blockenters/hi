@@ -1,5 +1,6 @@
 # 하이미디어 KDT
 
+오픈 톡방 : https://open.kakao.com/o/gZGj6S1g
 
 과정 소개 : https://docs.google.com/presentation/d/1oy0Jm1pcYQ9ybVHD8psUNEq1dqFqz3AqB4b60gpWQjc/edit?usp=sharing
 
