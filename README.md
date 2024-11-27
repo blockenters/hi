@@ -1,5 +1,7 @@
 # 하이미디어 KDT
 
+개발환경 설치 동영상 : https://www.youtube.com/@ReadyMan-p1h
+
 단톡방 : https://open.kakao.com/o/gIWv9Q0g
 
 과정 소개 : https://docs.google.com/presentation/d/1oy0Jm1pcYQ9ybVHD8psUNEq1dqFqz3AqB4b60gpWQjc/edit?usp=sharing
