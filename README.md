@@ -40,7 +40,9 @@ SQL 강의 데이터2 : https://drive.google.com/file/d/1q2Lm-BhpwF7S_5Cwskqv2Sg
 
 SQL 실습 1 : https://docs.google.com/presentation/d/1PzvUNt-V7YpSZTeh7oxfkN2DPCOXVPGc2GQopSS70qY/edit?usp=sharing
 
-SQL 실습 2 : https://docs.google.com/presentation/d/1btLVYnGwlr2unG2-r1mS9wOmgC8R-bcqv25QDcNCMf4/edit?usp=sharing
+SQL 실습 2 : https://docs.google.com/presentation/d/1_9wL3X7XVl0NZQSU2ITigLEsPlWXHf1XokVwt7OUevk/edit?usp=sharing
+
+SQL 실습 3: https://docs.google.com/presentation/d/1btLVYnGwlr2unG2-r1mS9wOmgC8R-bcqv25QDcNCMf4/edit?usp=sharing
 
 customer 데이터 : https://drive.google.com/file/d/1iJt32GfK5LQJ_gWQ-00bBGJdK1NlMM5K/view?usp=sharing
 
