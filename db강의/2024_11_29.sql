@@ -392,6 +392,326 @@ from books
 where pages = (SELECT max( pages ) from books) ;
 
 
+-- 재고 (stock_quantity) 가 가장 적은 책의, 책 이름과 발행년도를 보여주세요. 
+SELECT title, released_year
+FROM books
+order by stock_quantity asc
+limit 1;
+
+SELECT min( stock_quantity )
+from books;
+-- 12 
+
+SELECT title, released_year
+from books
+where stock_quantity = (SELECT min( stock_quantity ) from books);
+
+-- 출간년도가 2017년도인 데이터를 가져오시오.
+SELECT *
+FROM books
+WHERE released_year = 2017;
+
+-- 출간년도가 2017년이 아닌 데이터를 가져오시오. 
+SELECT *
+FROM books
+WHERE released_year != 2017;
+
+-- 작가의 lname 이 'Harris'  가 아닌 데이터를 가져오되,
+-- 책 제목과 페이지수만 가져오시오.
+SELECT title, pages
+FROM books
+WHERE author_lname != 'Harris';
+
+-- 책 제목에 W 가 포함된 책을 가져오시오.
+SELECT *
+FROM books
+WHERE title  like  '%W%';
+
+-- 책 제목에 W가 들어있지 않은 책을 가져오시오.
+SELECT *
+FROM books
+WHERE title  not like  '%W%';
+
+-- 책의 재고가 100개 이상인 데이터를 가져오되, 
+-- 책 제목과 재고만 보여주세요.
+SELECT title, stock_quantity
+from books
+WHERE stock_quantity >= 100;
+
+-- 출간년도가 2000년 이상인 책에 대해서,
+-- 최신책으로 정렬해서
+-- 제목과 년도를 보여주세요.
+SELECT title, released_year
+from books
+WHERE released_year >=  2000
+ORDER BY released_year desc;
+
+-- 신규 데이터 추가
+INSERT INTO books
+(title, author_fname, author_lname, released_year, pages)
+values
+('좋은책', '길동', '홍', 2024, 214);
+
+SELECT *
+from books;
+
+-- 재고가 null 인 데이터를 가져오시오. 
+SELECT *
+FROM books
+WHERE stock_quantity  is null;
+
+-- 재고가 null 이 아닌 데이터를 가져오시오. 
+SELECT *
+FROM books
+WHERE stock_quantity  is not null;
+
+-- 출간년도가 1990년에서 2015년 사이의 책 데이터를 가져오시오.
+SELECT *
+from books
+WHERE  released_year >= 1990  and released_year <= 2015;
+
+SELECT *
+from books
+where released_year BETWEEN 1990 and 2015;
+
+-- 책 재고가 100보다 크거나, 30보다 작은 데이터만 가져오세요.
+SELECT *
+from books
+WHERE stock_quantity > 100  or stock_quantity < 30 ;
+
+-- 년도별 stock_quantity 의 평균값이 70보다 큰 데이터를 가져와서
+-- 년도와 평균값을 보여주세요.
+SELECT  released_year  , avg( stock_quantity ) as avg
+from books
+group by released_year HAVING avg > 70; 
+
+-- 위의 결과에서 avg 가 큰것부터 나오도록 정렬하세요.
+SELECT  released_year  , avg( stock_quantity ) as avg
+from books
+group by released_year HAVING avg > 70
+ORDER by avg desc;
+
+-- 출간년도가 2000년 이상인 데이터에서,
+-- 년도별 재고수량의 평균값이 70보다 큰 데이터의
+-- 년도와 평균값을 보여주되, 
+-- 평균값이 높은 것부터 정렬해서 보여주세요.
+SELECT released_year , avg( stock_quantity ) as stock_avg
+from books
+WHERE released_year >= 2000
+GROUP BY released_year HAVING stock_avg > 70
+ORDER BY stock_avg desc;
+
+
+-- 실습문제
+SELECT  plan_name , count( * ) as cnt
+from subscriptions
+group by plan_name;
+
+SELECT status , sum( price ) as total_price
+from subscriptions
+order by status;
+
+SELECT plan_name, avg( price ) as avg_price
+from subscriptions
+group by plan_name;
+
+
+SELECT plan_name ,count( * ) as cnt
+from subscriptions
+group by plan_name HAVING  cnt >= 2;
+
+SELECT  status , sum( price ) as total_price
+from subscriptions
+group by status HAVING total_price >= 30000;
+
+SELECT plan_name, count(*) as cnt
+from subscriptions
+WHERE start_date > '2023-06-01'
+group by plan_name HAVING cnt >= 2
+order by cnt desc;
+
+
+SELECT plan_name , sum(price) as total_price
+from subscriptions
+WHERE status = 'Active'
+group by plan_name HAVING total_price >= 20000
+order by total_price desc;
+
+
+-- 데이터를 가공할때, 2가지 상황에 대해서 처리하는 함수 : if()
+-- books 테이블에서, 페이지 수가 300페이지 이상인 책은 '긴책' 이라고 하고
+-- 그렇지 않으면, '짧은책' 이라고 하자. 컬럼 이름은 book_type 으로 한다.
+
+SELECT * ,   if( pages >= 300 , '긴책', '짧은책'   ) as book_type
+FROM books;
+
+-- 출간년도가 2000년 이상인 책들은, '최신책' 이라고 하고
+-- 그렇지 않으면 '예전책' 이라고 새로운 컬럼을 만드세요. 컬럼명은 type
+SELECT * , if( released_year >= 2000 ,  "최신책" ,  "예전책"  ) as type
+from books;
+
+-- 3개 이상으로 분류하는 경우
+-- stock_quantity 가 0이상이고 50이하면,  * 
+-- stock_quantity 가 51 이상이고 100이하면, **
+-- stock_quantity 가 100이상이면,  *** 
+-- 새로운 컬럼 stock 을 만들어서 보여주세요.
+select * , 
+	CASE 
+		when stock_quantity >=0 and stock_quantity <= 50 then '*'
+		when stock_quantity >= 51 and stock_quantity <= 100 then '**'
+		else '***'
+	END	as stock
+from books;
+
+select * , 
+	CASE 
+		when stock_quantity between 0 and 50 then '*'
+		when stock_quantity BETWEEN 50 and 100 then '**'
+		else '***'
+	END	as stock
+from books;
+
+-- stock_quantity 에 null 이 있으면,  0으로 나오게, 새로운 컬럼 stock_quantity2 
+-- 를 만드세요.
+
+-- null 이 있으면, 다른 값으로 셋팅하는 함수 : ifnull() 
+SELECT *, IFNULL( stock_quantity, 0 ) 
+from books;
+
+SELECT *
+from books
+WHERE released_year < 1980;
+
+SELECT *
+from books
+where author_lname = 'Eggers' or author_lname = 'Chabon' ;
+
+SELECT *
+FROM books
+WHERE author_lname in ('Eggers', 'Chabon');
+
+SELECT *
+from books
+WHERE author_lname = 'Lahiri'  and released_year > 2000  ;
+
+SELECT *
+from books
+WHERE pages >= 100 and pages <= 200;
+
+SELECT *
+from books
+where pages BETWEEN 100 and 200;
+
+
+SELECT *
+from books
+WHERE author_lname  like 'c%'  or  author_lname like 's%'   ;
+
+
+
+SELECT title, author_lname , 
+	CASE 
+		when title like '%stories%'  then 'Short Stories'
+		when title = 'Just Kids' or title like '%heartbreaking%'   then 'Memoir' 
+		else 'Novel'
+	END as TYPE	
+from books;
+
+
+SELECT  title , author_lname , 
+	if(  count(*) = 1,  concat( count(*), ' book' ) ,  concat( count(*) , ' books' ) ) as COUNT
+from books
+group by author_fname, author_lname;
+
+
+
+SELECT  released_year as year  , count( * ) as '# books', avg(pages) as 'avg pages'
+from books
+group by released_year
+order by released_year asc;
+
+
+select * 
+from orders;
+
+-- 현재 날짜와 시간을 조회 : now()
+SELECT now();
+
+-- 현재 날짜만 조회 : curdate()
+SELECT CURDATE(); 
+
+-- 현재 시간만 조회 : curtime()
+SELECT CURTIME(); 
+
+-- orders 테이블에서, order_date 에서 년도만 가져오시오. year()
+-- 월만 가져오는것 month()
+SELECT * ,   year( order_date ) ,  MONTH( order_date ) ,
+			day(	order_date ),  HOUR(order_date), MINUTE(order_date), SECOND(order_date)
+from orders;
+
+-- 두 날짜간의 차이 계산 : datediff()
+-- 주문일과 배송일의 일수 계산
+SELECT * , DATEDIFF(delivery_date, order_date) as diff
+from orders;
+
+-- 시간 차이 계산 : timediff()
+SELECT * , TIMEDIFF('2023-10-05 15:00:00', order_date) as diff
+from orders;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
