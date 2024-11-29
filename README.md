@@ -2,8 +2,6 @@
 
 개발환경 설치 동영상 : https://www.youtube.com/@ReadyMan-p1h
 
-단톡방 : https://open.kakao.com/o/gIWv9Q0g
-
 과정 소개 : https://docs.google.com/presentation/d/1oy0Jm1pcYQ9ybVHD8psUNEq1dqFqz3AqB4b60gpWQjc/edit?usp=sharing
 
 온라인 서비스 개발 방법 (백엔드와 프론트엔드) : https://vision-ai.tistory.com/entry/On-Premise-%EC%99%80-Cloud-Services
