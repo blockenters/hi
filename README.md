@@ -1,5 +1,7 @@
 # 하이미디어 KDT
 
+블로그 주소 : https://docs.google.com/spreadsheets/d/1HV-rUupE9EGpiNxgPRGB2dz0L9thsUk-kRTVMhw_FZY/edit?usp=sharing
+
 개발환경 설치 동영상 : https://www.youtube.com/@ReadyMan-p1h
 
 과정 소개 : https://docs.google.com/presentation/d/1oy0Jm1pcYQ9ybVHD8psUNEq1dqFqz3AqB4b60gpWQjc/edit?usp=sharing
