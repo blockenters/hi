@@ -58,6 +58,8 @@ MySQL date time 레퍼런스 페이지 : https://www.tutorialspoint.com/mysql/my
 
 조인 실습 문제 1 / 2 : https://docs.google.com/presentation/d/1eCzrMuKDkNTdN8yOcpdZ3ua4xd9-pgajgMbOtVtq45w/edit?usp=sharing
 
+여러 테이블 조인 실습 : https://docs.google.com/presentation/d/1AcFQXWQf5kmVsWdKXoK40VnQPTxd4CWHE4Rjh-gakt4/edit?usp=sharing
+
 3개이상 테이블 조인용 데이터 : https://drive.google.com/file/d/1UoaKjSsF_1YoT9ERqAkVdruJG6ZxIMGM/view?usp=sharing
 
 스키마 설계 : https://docs.google.com/presentation/d/1b32VdzHRMCBaNABobmZqcOCfFAN4PYIAlnWxJuOKp9Y/edit?usp=sharing
