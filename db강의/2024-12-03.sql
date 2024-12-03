@@ -573,11 +573,65 @@ where sum_quantity = (select  max( sum_quantity )
 											on p.id = oi.product_id
 											group by p.id   ) sub_table)   ;
 
+-- 주문한 제품 종류가 3개 이상인 고객의 이름과 해당 고객의 주문 횟수를 조회하세요.
+SELECT c.customer_name  , count( DISTINCT o.id )
+from order_items oi 
+join orders o
+on oi.order_id = o.id
+join customers c 
+on o.customer_id = c.id
+GROUP BY c.id HAVING count( DISTINCT oi.product_id) >= 3 ;
 
 
+-- 2023년 10월에 주문한 제품의 이름과 총 판매 수량을 조회하세요.
+SELECT product_name , sum(oi.quantity)
+from orders o
+join order_items oi 
+on o.id = oi.order_id
+join products p 
+on oi.product_id = p.id
+where order_date BETWEEN '2023-10-01' and '2023-10-31' 
+group by oi.product_id ;
+
+-- 가장 많이 구매한 고객의 이름과 해당 고객이 구매한 총 제품 수량을 조회하세요.
+SELECT c.customer_name , sum( oi.quantity ) as sum_quantity
+from customers c
+join orders o
+on c.id = o.customer_id
+join order_items oi 
+on o.id = oi.order_id
+group by c.id
+order by sum_quantity desc;
 
 
+SELECT max(sum_quantity)
+from  (SELECT c.customer_name , sum( oi.quantity ) as sum_quantity
+			from customers c
+			join orders o
+			on c.id = o.customer_id
+			join order_items oi 
+			on o.id = oi.order_id
+			group by c.id
+			order by sum_quantity desc) as sub_table ; 
 
+SELECT * 
+from (SELECT c.customer_name , sum( oi.quantity ) as sum_quantity
+			from customers c
+			join orders o
+			on c.id = o.customer_id
+			join order_items oi 
+			on o.id = oi.order_id
+			group by c.id
+			order by sum_quantity desc) as sub_table
+where sum_quantity = (SELECT max(sum_quantity)
+									from  (SELECT c.customer_name , sum( oi.quantity ) as sum_quantity
+												from customers c
+												join orders o
+												on c.id = o.customer_id
+												join order_items oi 
+												on o.id = oi.order_id
+												group by c.id
+												order by sum_quantity desc) as sub_table) ; 
 
 
 
