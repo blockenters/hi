@@ -64,6 +64,9 @@ MySQL date time 레퍼런스 페이지 : https://www.tutorialspoint.com/mysql/my
 
 스키마 설계 : https://docs.google.com/presentation/d/1b32VdzHRMCBaNABobmZqcOCfFAN4PYIAlnWxJuOKp9Y/edit?usp=sharing
 
+스키마 실습 1 : https://docs.google.com/presentation/d/1rlme_jFV0RcQHsDTnC3nqrsZOkkVu2Y_7Wwx_CA-oY0/edit?usp=sharing
+
+
 --- 
 
 ### 블로그 작성시 참고 
