@@ -10,13 +10,9 @@
 
 ---
 
-## UI / UX
+## JAVA
 
-UI 소개 : https://docs.google.com/presentation/d/1j1f3Mm-CGXqcvVH-ibkWRK-pq6a5RouJON4pn4jdiHU/edit?usp=sharing
-
-HTML, CSS, Javascript 란 : https://docs.google.com/document/d/12-4-Y2BKF3jdU1oY63H3hvNmdtnBnt8X8GGGiqbMJtA/edit?usp=sharing
-
-##
+환경설정 및 강의자료 : https://docs.google.com/document/d/1R-p62Bb61QGOkSr49mAJ6zcF9DiZfcmUA1VUdEDAA9A/edit?usp=sharing
 
 ---
 
@@ -68,8 +64,19 @@ MySQL date time 레퍼런스 페이지 : https://www.tutorialspoint.com/mysql/my
 
 스키마 실습 1 : https://docs.google.com/presentation/d/1rlme_jFV0RcQHsDTnC3nqrsZOkkVu2Y_7Wwx_CA-oY0/edit?usp=sharing
 
+스키마 실습 2 : https://docs.google.com/presentation/d/1_V1XrSGEWFmiGvxQaAGX6PSdN6Vf_jqv0XDiUodHyXU/edit?usp=sharing
 
 --- 
+
+## UI / UX
+
+UI 소개 : https://docs.google.com/presentation/d/1j1f3Mm-CGXqcvVH-ibkWRK-pq6a5RouJON4pn4jdiHU/edit?usp=sharing
+
+HTML, CSS, Javascript 란 : https://docs.google.com/document/d/12-4-Y2BKF3jdU1oY63H3hvNmdtnBnt8X8GGGiqbMJtA/edit?usp=sharing
+
+
+---
+
 
 ### 블로그 작성시 참고 
 
