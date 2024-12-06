@@ -12,6 +12,8 @@
 
 ## JAVA
 
+개발툴 설치 : https://www.jetbrains.com/ko-kr/idea/download/download-thanks.html?platform=windows&code=IIC
+
 환경설정 및 강의자료 : https://docs.google.com/document/d/1R-p62Bb61QGOkSr49mAJ6zcF9DiZfcmUA1VUdEDAA9A/edit?usp=sharing
 
 ---
