@@ -16,6 +16,8 @@
 
 환경설정 및 강의자료 : https://docs.google.com/document/d/1R-p62Bb61QGOkSr49mAJ6zcF9DiZfcmUA1VUdEDAA9A/edit?usp=sharing
 
+클래스(Class)와 객체(Instance) : https://docs.google.com/presentation/d/1dU8iCAYL_vGOI2Dude6rdUWILgJImLt_C2EP-YmDRBs/edit?usp=sharing
+
 ---
 
 ## DB
