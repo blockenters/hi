@@ -30,6 +30,8 @@
 
 실습 문제 4 : https://docs.google.com/document/d/1dtTNWOUUTiCaGMnFVfLuhyQALHQTxY0KW8CMm9oG69U/edit?usp=sharing
 
+실습 문제 5 : https://docs.google.com/document/d/1F89QuCIHCLfQ-LlsrFo2UeS-G6Tva8OJKA1tRpYC9NE/edit?usp=sharing
+
 ---
 
 ## DB
