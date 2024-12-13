@@ -26,6 +26,8 @@
 
 상속 : https://docs.google.com/presentation/d/1jLP5ALFkXufyM0zYMSzI8o_v5JG6CswaqbjzYNcrmmY/edit?usp=sharing
 
+실습 문제 3: https://docs.google.com/document/d/1upHLKhpPIa194il3hZvAbN858Ax4pGODP0e3O8TfX9Q/edit?usp=sharing
+
 ---
 
 ## DB
