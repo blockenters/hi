@@ -24,6 +24,8 @@
 
 실습 문제 2 : https://docs.google.com/document/d/1GXEVfLBr5IKnQTXo1h_dlT_Z2mGvFlfc-snqVICTODk/edit?usp=sharing
 
+상속 : https://docs.google.com/presentation/d/1jLP5ALFkXufyM0zYMSzI8o_v5JG6CswaqbjzYNcrmmY/edit?usp=sharing
+
 ---
 
 ## DB
