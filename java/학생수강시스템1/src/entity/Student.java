@@ -31,9 +31,18 @@ public class Student {
 
     public boolean cancelLecture() {
         // 1. 현재 수강 중인 강의가 있는지 확인합니다.
+        if( registeredLecture == null ){
+            System.out.println("수강중인 과목이 없어서 취소할 것도 없습니다.");
+            return false;
+        }
         // 2. 수강 중인 강의가 있다면, 해당 강의에서 학생을 제거합니다.
+        if( registeredLecture.removeStudent() == false){
+            return false;
+        }
         // 3. registeredLecture를 null로 설정합니다.
+        registeredLecture = null;
         // 4. 취소가 성공하면 true, 실패하면 false를 반환합니다.
+        System.out.println("수강 취소가 잘 되었습니다.");
         return true;
     }
 
