@@ -28,6 +28,8 @@
 
 실습 문제 3: https://docs.google.com/document/d/1upHLKhpPIa194il3hZvAbN858Ax4pGODP0e3O8TfX9Q/edit?usp=sharing
 
+실습 문제 4 : https://docs.google.com/document/d/1dtTNWOUUTiCaGMnFVfLuhyQALHQTxY0KW8CMm9oG69U/edit?usp=sharing
+
 ---
 
 ## DB
