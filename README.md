@@ -34,7 +34,9 @@
 
 추상클래스 실습 1 : https://docs.google.com/document/d/1vdbLdQ1urW4XhQzEnOhc5fAhb06gY5X1HwNrknl_eO8/edit?usp=sharing
 
-인터페이스 실습 2 : https://docs.google.com/document/d/1vwrSBeCyPqBVHB5rbvzs76mJhbX1vKIdlzeWQZgZnDw/edit?usp=sharing
+인터페이스 실습 1 : https://docs.google.com/document/d/1vwrSBeCyPqBVHB5rbvzs76mJhbX1vKIdlzeWQZgZnDw/edit?usp=sharing
+
+인터페이스 실습 2 : https://docs.google.com/document/d/1s8xjrkAbYD1oYOnbzm70hW0lrJFUf9Q03BPcI4ewFq4/edit?usp=sharing
 
 ---
 
