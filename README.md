@@ -38,6 +38,8 @@
 
 인터페이스 실습 2 : https://docs.google.com/document/d/1s8xjrkAbYD1oYOnbzm70hW0lrJFUf9Q03BPcI4ewFq4/edit?usp=sharing
 
+인터페이스 실습 3 : https://docs.google.com/document/d/1s8xjrkAbYD1oYOnbzm70hW0lrJFUf9Q03BPcI4ewFq4/edit?usp=sharing
+
 ---
 
 ## DB
