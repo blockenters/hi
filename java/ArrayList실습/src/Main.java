@@ -23,11 +23,13 @@ public class Main {
 
         // TODO: ID로 한 명의 학생을 검색하고 그 정보를 출력하세요.
         // id 가 3인 학생 검색하여 출력.
+        manager.findStudent(3).print();
 
         // TODO: 한 명의 학생을 삭제하세요. id가 1인 학생 삭제.
+        manager.removeStudent(2);
 
         // TODO: 삭제 후 모든 학생 정보를 다시 출력하세요.
-
+        manager.displayAllStudents();
 
     }
 }
