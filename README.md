@@ -10,6 +10,20 @@
 
 ---
 
+## Git / Github 
+
+Git 아주 쉬운 설명 : https://www.youtube.com/watch?v=WahQJn44PZ8
+
+Github 아주 쉬운 설명 : https://www.youtube.com/watch?v=-Id_xXa6JcU
+
+Git Download : https://git-scm.com/downloads
+
+Github 계정 생성
+
+Github Desktop Download : https://desktop.github.com/download/
+
+---
+
 ## JAVA
 
 개발툴 설치 : https://www.jetbrains.com/ko-kr/idea/download/download-thanks.html?platform=windows&code=IIC
