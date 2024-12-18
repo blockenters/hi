@@ -22,6 +22,8 @@ Github 계정 생성
 
 Github Desktop Download : https://desktop.github.com/download/
 
+Git 설치 방법 : https://docs.google.com/document/d/14sDY4tapz1-IwpKlqguAnZ5Jyd9drRnv-FvqxAVG-5w/edit?usp=sharing
+
 ---
 
 ## JAVA
