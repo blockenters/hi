@@ -14,7 +14,7 @@
 
 Restful API 설명 동영상 : https://www.youtube.com/watch?v=2UlpD5wnZs0
 
-Restful API 서버 개발 : https://docs.google.com/presentation/d/1tuZvlY2PcnQw7K6u5K92FWZ5KggVbGzewf9xlaZ_uzo/edit?usp=sharing
+Restful API 서버 개발에 필요한 용어 : https://docs.google.com/presentation/d/1tuZvlY2PcnQw7K6u5K92FWZ5KggVbGzewf9xlaZ_uzo/edit?usp=sharing
 
 서버 개발 강의 자료 : https://docs.google.com/document/d/1rnft1GmyLuziuXhbnnCVD1tM1nbf1oUpmo26A4HaLcI/edit?usp=sharing
 
