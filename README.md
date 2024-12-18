@@ -18,6 +18,8 @@ Restful API 서버 개발 : https://docs.google.com/presentation/d/1tuZvlY2PcnQw
 
 서버 개발 강의 자료 : https://docs.google.com/document/d/1rnft1GmyLuziuXhbnnCVD1tM1nbf1oUpmo26A4HaLcI/edit?usp=sharing
 
+실습 DB없는 서버 : https://docs.google.com/document/d/1BmnjwFtu0vhr-UUzP05DxmKdNVZi1ORwn35GosWwP2U/edit?usp=sharing
+
 강의 1 : https://docs.google.com/presentation/d/15BJ8OJV-8fHDxBT7TnxyhKgI_WqqDVXr3IN9U0I0rhY/edit?usp=sharing
 
 실습 1 : https://docs.google.com/presentation/d/1xM0fvJzNVnB0swvkaoE17jlvFKlBnkIkAgsfNMULbyE/edit?usp=sharing
