@@ -12,6 +12,8 @@
 
 ## Spring Boot
 
+Restful API 설명 동영상 : https://www.youtube.com/watch?v=2UlpD5wnZs0
+
 Restful API 서버 개발 : https://docs.google.com/presentation/d/1tuZvlY2PcnQw7K6u5K92FWZ5KggVbGzewf9xlaZ_uzo/edit?usp=sharing
 
 서버 개발 강의 자료 : https://docs.google.com/document/d/1rnft1GmyLuziuXhbnnCVD1tM1nbf1oUpmo26A4HaLcI/edit?usp=sharing
@@ -24,9 +26,9 @@ Restful API 서버 개발 : https://docs.google.com/presentation/d/1tuZvlY2PcnQw
 
 ## Git / Github 
 
-Git 아주 쉬운 설명 : https://www.youtube.com/watch?v=WahQJn44PZ8
+Git 설명 동영상 : https://www.youtube.com/watch?v=WahQJn44PZ8
 
-Github 아주 쉬운 설명 : https://www.youtube.com/watch?v=-Id_xXa6JcU
+Github 설명 동영상 : https://www.youtube.com/watch?v=-Id_xXa6JcU
 
 Git Download : https://git-scm.com/downloads
 
@@ -73,6 +75,10 @@ HashMap 실습 : https://docs.google.com/document/d/1h5gld5UcanrBvZzcOpF0FSHKei1
 ---
 
 ## DB
+
+AWS RDS 설치 동영상 : https://www.youtube.com/watch?v=GxbvKMKARgY
+
+DBeaver 설정 동영상 : https://www.youtube.com/watch?v=Ji2KUtKeqqw
 
 기본강의자료 : https://drive.google.com/file/d/183WAPsVlzROLgacndBs03iCG-f-XBZfK/view?usp=sharing
 
