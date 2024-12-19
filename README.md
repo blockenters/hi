@@ -26,6 +26,8 @@ DB없는 서버 개발 실습문제 : https://docs.google.com/document/d/1j63QG5
 
 강의 1 : https://docs.google.com/presentation/d/15BJ8OJV-8fHDxBT7TnxyhKgI_WqqDVXr3IN9U0I0rhY/edit?usp=sharing
 
+윈도우즈에서 터널링 설정하기 : https://docs.google.com/document/d/1vUUm-6KLkulrd8L6fUamctRknigOJwHSh7pHgQV3px0/edit?usp=sharing
+
 실습 1 : https://docs.google.com/presentation/d/1xM0fvJzNVnB0swvkaoE17jlvFKlBnkIkAgsfNMULbyE/edit?usp=sharing
 
 ---
