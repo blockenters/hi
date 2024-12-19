@@ -3,7 +3,9 @@ package com.block.user.dao;
 import com.block.user.entity.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.stereotype.Repository;
 
+@Repository
 public class UserDAO {
     // 데이터베이스에 쿼리할 SQL을 실행하는 클래스
     // CRUD 기능을 제공한다.

@@ -8,13 +8,53 @@ import lombok.NoArgsConstructor;
 // 자바에서는 클래스 이므로
 // 클래스명을 테이블명과 동일하게 만든다.
 // 멤버변수 이름도 컬럼이름과 동일하게 만든다.
-@NoArgsConstructor
-@AllArgsConstructor
-@Data
+
 public class User {
+
     private Long id;
     private String name;
     private String email;
     private String createdAt;
 
+    public User() {
+    }
+
+    public User(Long id, String name, String email, String createdAt) {
+        this.id = id;
+        this.name = name;
+        this.email = email;
+        this.createdAt = createdAt;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getCreatedAt() {
+        return createdAt;
+    }
+
+    public void setCreatedAt(String createdAt) {
+        this.createdAt = createdAt;
+    }
 }

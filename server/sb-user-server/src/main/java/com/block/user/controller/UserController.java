@@ -21,6 +21,9 @@ public class UserController {
         // user 클래스에 들어있는 데이터를
         // DB에 저장해야 한다.
         int result = userDAO.createUser(user);
+
+        System.out.println("DB 저장 결과 : " + result);
+
         if(result > 0){
             return Map.of("status", "success");
         }else {
