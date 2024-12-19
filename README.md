@@ -46,6 +46,8 @@ Github Desktop Download : https://desktop.github.com/download/
 
 Git 설치 방법 : https://docs.google.com/document/d/14sDY4tapz1-IwpKlqguAnZ5Jyd9drRnv-FvqxAVG-5w/edit?usp=sharing
 
+Github Desktop 으로, 회사와 집에서 작업 이어하는 방법(영상) : https://youtu.be/tHNrBg5-Wl8
+
 ---
 
 ## JAVA
