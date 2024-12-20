@@ -30,6 +30,8 @@ DB없는 서버 개발 실습문제 : https://docs.google.com/document/d/1j63QG5
 
 실습 1 : https://docs.google.com/presentation/d/1xM0fvJzNVnB0swvkaoE17jlvFKlBnkIkAgsfNMULbyE/edit?usp=sharing
 
+강의 2 : https://www.notion.so/API-1624a24679c08070867bffae09576277?pvs=4
+
 ---
 
 ## Git / Github 
