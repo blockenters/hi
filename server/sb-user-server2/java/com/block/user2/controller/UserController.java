@@ -1,13 +1,12 @@
 package com.block.user2.controller;
 
 import com.block.user2.dao.UserDAO;
+import com.block.user2.dto.UserOneResDTO;
 import com.block.user2.dto.UserResDTO;
 import com.block.user2.entity.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Map;
 
@@ -29,4 +28,27 @@ public class UserController {
             return ResponseEntity.status(500).body(new UserResDTO("fail"));
         }
     }
+
+    @GetMapping("/api/users/{id}")
+    ResponseEntity<UserOneResDTO> getUserById(@PathVariable long id){
+        // DB에서 해당 아이디에 해당하는 유저 정보 받아온다.
+        User user = userDAO.getUserById(id);
+        // 유저가 있는경우
+        if(user != null){
+            return ResponseEntity.status(200).body(new UserOneResDTO("success", user));
+        }else {
+            // 유저가 없는경우
+            return ResponseEntity.status(400).build();
+        }
+
+    }
+
+
+
 }
+
+
+
+
+
+
