@@ -1,6 +1,8 @@
 package com.block.user2.controller;
 
+import com.block.user2.User2Application;
 import com.block.user2.dao.UserDAO;
+import com.block.user2.dto.UserAllResDTO;
 import com.block.user2.dto.UserOneResDTO;
 import com.block.user2.dto.UserResDTO;
 import com.block.user2.entity.User;
@@ -8,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 import java.util.Map;
 
 @RestController
@@ -48,6 +51,16 @@ public class UserController {
         } catch (Exception e) {
             return ResponseEntity.status(400).build();
         }
+
+    }
+
+    @GetMapping("/api/users")
+    public ResponseEntity<UserAllResDTO> getAllUsers(){
+
+        // db에 저장된 유저들을 가져온다.
+        List<User> userList = userDAO.getAllUsers();
+
+        return ResponseEntity.status(200).body(new UserAllResDTO("success", userList.size(), userList ));
 
     }
 
