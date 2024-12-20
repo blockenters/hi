@@ -64,6 +64,43 @@ public class UserController {
 
     }
 
+    @PutMapping("/api/users/{id}")
+    public ResponseEntity<UserResDTO> updateUser(@PathVariable long id, @RequestBody User user){
+
+        // Db에 업데이트.
+        try {
+            int result = userDAO.updateUser(id, user);
+            System.out.println("---- result : " + result);
+            if(result > 0){
+                return ResponseEntity.status(200).body(new UserResDTO("success"));
+            }else{
+                return ResponseEntity.status(200).body(new UserResDTO("no update"));
+            }
+
+        } catch (Exception e) {
+            return ResponseEntity.status(400).body(new UserResDTO("fail"));
+        }
+
+    }
+
+    @DeleteMapping("/api/users/{id}")
+    public ResponseEntity<UserResDTO> deleteUser(@PathVariable long id){
+        // 디비에서 삭제
+
+        try {
+            int result = userDAO.deleteUser(id);
+            if (result > 0){
+                return ResponseEntity.status(200).body(new UserResDTO("success"));
+            }else{
+                return ResponseEntity.status(200).body(new UserResDTO("no delete"));
+            }
+        } catch (Exception e) {
+            return ResponseEntity.status(500).body(new UserResDTO("fail"));
+        }
+
+
+    }
+
 
 
 }

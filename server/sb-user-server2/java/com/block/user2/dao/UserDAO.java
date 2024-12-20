@@ -38,6 +38,18 @@ public class UserDAO {
         return jdbcTemplate.query(sql, new UserRowMapper() );
     }
 
+    public int updateUser(long id, User user){
+        String sql = "update user \n" +
+                "set name = ? , email = ? \n" +
+                "where id = ? ;";
+        return jdbcTemplate.update(sql, user.getName(), user.getEmail(), id );
+    }
+
+    public int deleteUser(long id){
+        String sql = "delete from user\n" +
+                "where id = ? ;";
+        return jdbcTemplate.update(sql, id);
+    }
 
 
     private static class UserRowMapper implements RowMapper<User>{
