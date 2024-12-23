@@ -32,4 +32,26 @@ public class UserController {
         }
     }
 
+    @PostMapping("/api/users/login")
+    public ResponseEntity<UserResponse> userLogin(@RequestBody UserRequest userRequest){
+        int result = userService.userLogin(userRequest);
+        if(result == 0){
+            return ResponseEntity.status(200).body(new UserResponse("success"));
+        }else if(result == 1 || result == 2){
+            return ResponseEntity.status(400).build();
+        }else if(result == 3) {
+            return ResponseEntity.status(401).build();
+        }else {
+            return ResponseEntity.status(500).build();
+        }
+    }
+
 }
+
+
+
+
+
+
+
+
