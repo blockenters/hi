@@ -1,8 +1,11 @@
 package com.block.review.service;
 
 import com.block.review.dao.ProductDAO;
+import com.block.review.dao.ReviewDAO;
+import com.block.review.dto.ProductDetailResponse;
 import com.block.review.dto.ProductListResponse;
 import com.block.review.dto.ProductResponse;
+import com.block.review.dto.ReviewResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -13,6 +16,8 @@ public class ProductService {
 
     @Autowired
     ProductDAO productDAO;
+    @Autowired
+    ReviewDAO reviewDAO;
 
     public ProductListResponse getAllProducts(int page, int size, String category){
 
@@ -36,6 +41,13 @@ public class ProductService {
             ProductListResponse productListResponse = new ProductListResponse(productList, totalPages, totalElements, currentPage, pageSize);
             return productListResponse;
         }
+    }
+
+    public ProductDetailResponse getProductById(long productId) {
+        ProductResponse product = productDAO.getProductById(productId);
+        List<ReviewResponse> reviewList = reviewDAO.getReviewListByProductId(productId);
+        ProductDetailResponse productDetailResponse = new ProductDetailResponse(product, reviewList);
+        return productDetailResponse;
     }
 
 }

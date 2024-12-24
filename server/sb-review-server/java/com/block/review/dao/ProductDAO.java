@@ -32,7 +32,6 @@ public class ProductDAO {
 
     }
 
-
     public List<ProductResponse> getAllProducts(int page, int size, String category){
         String sql = "SELECT p.id, p.name, p.description, p.price, p.category, p.stock_quantity ,\n" +
                 "\t\t\tavg(r.rating) as averageRating , \n" +
@@ -48,14 +47,11 @@ public class ProductDAO {
         return jdbcTemplate.query(sql, new ProductRowMapper(), category, offset, size);
     }
 
-
-
     public int getTotalElements(){
         String sql = "select count(*)\n" +
                 "from products;";
         return jdbcTemplate.queryForObject(sql, Integer.class);
     }
-
 
     public int getTotalElements(String category){
         String sql = "select count(*)\n" +
@@ -63,6 +59,19 @@ public class ProductDAO {
                 "where category = ? ;";
         return jdbcTemplate.queryForObject(sql, Integer.class, category);
     }
+
+
+    public ProductResponse getProductById(long productId){
+        String sql = "select p.id, p.name, p.description, p.price, p.category,p.stock_quantity,\n" +
+                "\t\tIFNULL( avg(r.rating) , 0   )  as averageRating ,  \n" +
+                "\t\tcount(r.id) as reviewCount\n" +
+                "from products p\n" +
+                "left join reviews r \n" +
+                "on p.id = r.product_id \n" +
+                "where p.id = ? ;";
+        return jdbcTemplate.queryForObject(sql, new ProductRowMapper(), productId);
+    }
+
 
 
     public static class ProductRowMapper implements RowMapper<ProductResponse>{
