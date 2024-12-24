@@ -15,9 +15,11 @@ public class ProductController {
     private ProductService productService;
 
     @GetMapping("/api/products")
-    public ResponseEntity<ProductListResponse> getAllProducts(@RequestParam int page, @RequestParam int size){
+    public ResponseEntity<ProductListResponse> getAllProducts(@RequestParam int page,
+                                                              @RequestParam int size,
+                                                              @RequestParam(required = false) String category) {
 
-        ProductListResponse productListResponse = productService.getAllProducts(page, size);
+        ProductListResponse productListResponse = productService.getAllProducts(page, size, category);
         return ResponseEntity.status(200).body(productListResponse);
 
     }

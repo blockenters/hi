@@ -14,15 +14,28 @@ public class ProductService {
     @Autowired
     ProductDAO productDAO;
 
-    public ProductListResponse getAllProducts(int page, int size){
-        List<ProductResponse> productList = productDAO.getAllProducts(page, size);
-        int totalElements = productDAO.getTotalElements();
-        int totalPages = (int)Math.ceil(totalElements / (double)size);
-        int currentPage = page;
-        int pageSize = size;
+    public ProductListResponse getAllProducts(int page, int size, String category){
 
-        ProductListResponse productListResponse = new ProductListResponse(productList, totalPages, totalElements, currentPage, pageSize);
-        return productListResponse;
+        // 카테고리가 있는 경우와 없는 경우로 나눠서 처리한다.
+        if(category == null || category.isEmpty() ){
+            List<ProductResponse> productList = productDAO.getAllProducts(page, size);
+            int totalElements = productDAO.getTotalElements();
+            int totalPages = (int)Math.ceil(totalElements / (double)size);
+            int currentPage = page;
+            int pageSize = size;
+            ProductListResponse productListResponse = new ProductListResponse(productList, totalPages, totalElements, currentPage, pageSize);
+            return productListResponse;
+
+        } else {
+
+            List<ProductResponse> productList = productDAO.getAllProducts(page, size, category);
+            int totalElements = productDAO.getTotalElements(category);
+            int totalPages = (int)Math.ceil(totalElements / (double)size);
+            int currentPage = page;
+            int pageSize = size;
+            ProductListResponse productListResponse = new ProductListResponse(productList, totalPages, totalElements, currentPage, pageSize);
+            return productListResponse;
+        }
     }
 
 }

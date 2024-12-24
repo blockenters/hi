@@ -33,10 +33,35 @@ public class ProductDAO {
     }
 
 
+    public List<ProductResponse> getAllProducts(int page, int size, String category){
+        String sql = "SELECT p.id, p.name, p.description, p.price, p.category, p.stock_quantity ,\n" +
+                "\t\t\tavg(r.rating) as averageRating , \n" +
+                "\t\t\tcount( r.id ) as reviewCount\n" +
+                "from products p\n" +
+                "left join reviews r\n" +
+                "on p.id = r.product_id\n" +
+                "where category =  ?  \n" +
+                "group by p.id\n" +
+                "order by p.id\n" +
+                "limit ? , ? ;";
+        int offset = (page - 1) * size;
+        return jdbcTemplate.query(sql, new ProductRowMapper(), category, offset, size);
+    }
+
+
+
     public int getTotalElements(){
         String sql = "select count(*)\n" +
                 "from products;";
         return jdbcTemplate.queryForObject(sql, Integer.class);
+    }
+
+
+    public int getTotalElements(String category){
+        String sql = "select count(*)\n" +
+                "from products\n" +
+                "where category = ? ;";
+        return jdbcTemplate.queryForObject(sql, Integer.class, category);
     }
 
 
