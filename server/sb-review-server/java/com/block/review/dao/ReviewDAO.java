@@ -1,5 +1,6 @@
 package com.block.review.dao;
 
+import com.block.review.dto.MyReviewResponse;
 import com.block.review.dto.ReviewRequest;
 import com.block.review.dto.ReviewResponse;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -35,6 +36,56 @@ public class ReviewDAO {
                 reviewRequest.rating, reviewRequest.content);
     }
 
+    public int updateReview(long reviewId, ReviewRequest reviewRequest){
+        String sql = "update reviews\n" +
+                "set rating = ? , content = ? \n" +
+                "where id = ? and user_id =  ? ;";
+        return jdbcTemplate.update(sql, reviewRequest.rating,
+                reviewRequest.content, reviewId, reviewRequest.userId);
+    }
+
+
+    public int deleteReview(long reviewId, long userId){
+        String sql = "delete from reviews\n" +
+                "where id = ? and user_id = ? ;";
+        return jdbcTemplate.update(sql, reviewId, userId);
+    }
+
+    public List<MyReviewResponse> getReviewListByUserId(long userId, int offset, int size){
+        String sql = "SELECT r.id, r.product_id, p.name as product_name, r.rating, r.content, r.created_at, r.updated_at\n" +
+                "from reviews r \n" +
+                "join products p \n" +
+                "on r.product_id = p.id \n" +
+                "where user_id =  ? \n" +
+                "order by r.created_at desc\n" +
+                "limit ? , ? ;";
+        return jdbcTemplate.query(sql, new MyReviewRowMapper(), userId, offset, size);
+    }
+
+
+    public int getMyReviewTotalElements(long userId){
+        String sql = "SELECT count(*)\n" +
+                "from reviews\n" +
+                "where user_id = ? ;";
+        return jdbcTemplate.queryForObject(sql, Integer.class, userId);
+    }
+
+
+    public static class MyReviewRowMapper implements RowMapper<MyReviewResponse>{
+
+        @Override
+        public MyReviewResponse mapRow(ResultSet rs, int rowNum) throws SQLException {
+            MyReviewResponse myReviewResponse = new MyReviewResponse();
+            myReviewResponse.id = rs.getLong("id");
+            myReviewResponse.productId = rs.getLong("product_id");
+            myReviewResponse.productName = rs.getString("product_name");
+            myReviewResponse.rating = rs.getInt("rating");
+            myReviewResponse.content = rs.getString("content");
+            myReviewResponse.createdAt = rs.getString("created_at");
+            myReviewResponse.updatedAt = rs.getString("updated_at");
+            return myReviewResponse;
+        }
+    }
 
 
     public static class ReviewRowMapper implements RowMapper<ReviewResponse>{

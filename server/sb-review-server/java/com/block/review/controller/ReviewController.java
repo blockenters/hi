@@ -1,13 +1,11 @@
 package com.block.review.controller;
 
+import com.block.review.dto.MyReviewListResponse;
 import com.block.review.dto.ReviewRequest;
 import com.block.review.service.ReviewService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 public class ReviewController {
@@ -28,6 +26,44 @@ public class ReviewController {
         }
         return ResponseEntity.status(201).build();
 
+    }
+    @PutMapping("/api/reviews/{reviewId}")
+    public ResponseEntity<Object> updateReview(@PathVariable long reviewId,
+                                        @RequestBody ReviewRequest reviewRequest){
+
+        int result = reviewService.updateReview(reviewId, reviewRequest);
+
+        if(result == 1 || result == 2){
+            return ResponseEntity.status(400).build();
+        }else if(result == 3){
+            return ResponseEntity.status(404).build();
+        }
+
+        return ResponseEntity.status(200).build();
+    }
+
+
+    @DeleteMapping("/api/reviews/{reviewId}")
+    public ResponseEntity<Object> deleteReview(@PathVariable long reviewId,
+                                        @RequestParam long userId){
+
+        int result = reviewService.deleteReview(reviewId, userId);
+
+        if(result == 0){
+            return ResponseEntity.status(204).build();
+        }else {
+            return ResponseEntity.status(404).build();
+        }
+
+    }
+
+    @GetMapping("/api/users/{userId}/reviews")
+    public ResponseEntity<MyReviewListResponse> getReviewListByUserId(@PathVariable long userId,
+                                                                      @RequestParam(defaultValue = "1") int page,
+                                                                      @RequestParam(defaultValue = "10") int size){
+
+        MyReviewListResponse myReviewListResponse = reviewService.getReviewListByUserId(userId, page, size);
+        return ResponseEntity.status(200).body(myReviewListResponse);
     }
 
 }
