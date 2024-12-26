@@ -31,9 +31,9 @@ public class JwtConfig {
         Date validity = new Date(now.getTime() + tokenValidMilisecond);
 
         return Jwts.builder()
-                .setSubject(userId.toString())
-                .setIssuedAt(now)
-                .setExpiration(validity)
+                .subject(userId.toString())
+                .issuedAt(now)
+                .expiration(validity)
                 .signWith(key, SignatureAlgorithm.HS256)
                 .compact();
     }

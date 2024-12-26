@@ -6,6 +6,7 @@ import com.block.jwt.dao.UserDAO;
 import com.block.jwt.dto.UserRequest;
 import com.block.jwt.entity.User;
 import com.block.jwt.util.EmailValidator;
+import io.jsonwebtoken.Claims;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -77,6 +78,10 @@ public class UserService {
             // 유저 아이디를 토대로 JWT 토큰을 발급한다.
             String token = jwtConfig.createToken(user.id);
             System.out.println("token : " + token);
+
+            Claims claims = jwtConfig.getTokenClaims(token);
+            System.out.println("userId : " + claims.getSubject());
+
             return token;
 
         } catch (Exception e) {
