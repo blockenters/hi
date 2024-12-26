@@ -1,5 +1,6 @@
 package com.block.review.dao;
 
+import com.block.review.dto.ReviewRequest;
 import com.block.review.dto.ReviewResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -25,6 +26,16 @@ public class ReviewDAO {
                 "order by r.created_at desc ;";
         return jdbcTemplate.query(sql, new ReviewRowMapper(), productId);
     }
+
+
+    public int createReview(long productId, ReviewRequest reviewRequest){
+        String sql = "INSERT INTO reviews (product_id, user_id, rating, content)\n" +
+                "values ( ? , ?, ? , ? );";
+        return jdbcTemplate.update(sql, productId, reviewRequest.userId,
+                reviewRequest.rating, reviewRequest.content);
+    }
+
+
 
     public static class ReviewRowMapper implements RowMapper<ReviewResponse>{
 
