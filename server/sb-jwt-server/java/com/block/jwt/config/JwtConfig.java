@@ -27,13 +27,11 @@ public class JwtConfig {
     }
 
     public String createToken(Long userId) {
-        Claims claims = (Claims) Jwts.claims();
-        claims.put("userId", userId);
         Date now = new Date();
         Date validity = new Date(now.getTime() + tokenValidMilisecond);
 
         return Jwts.builder()
-                .setClaims(claims)
+                .setSubject(userId.toString())
                 .setIssuedAt(now)
                 .setExpiration(validity)
                 .signWith(key, SignatureAlgorithm.HS256)

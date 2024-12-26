@@ -1,6 +1,7 @@
 package com.block.jwt.service;
 
 import com.block.jwt.config.JwtConfig;
+import com.block.jwt.config.SecurityConfig;
 import com.block.jwt.dao.UserDAO;
 import com.block.jwt.dto.UserRequest;
 import com.block.jwt.entity.User;
@@ -59,12 +60,17 @@ public class UserService {
         // DB로 부터 유저 정보를 받아온다.
         try{
             User user = userDAO.userLogin(userRequest);
-
+            System.out.println("userId : " + user.id);
             // 비밀번호가 맞는지 확인한다.
             if( passwordEncoder.matches( userRequest.password ,user.password) == false){
                 // 비밀번호가 틀린경우.
+                System.out.println(userRequest.password);
+                System.out.println(user.password);
                 return 3;
             }
+
+            System.out.println("ok : "+userRequest.password);
+            System.out.println("ok : "+user.password);
 
             // 인증토큰을 발급한다. JWT 토큰을 발급한다.
             // 가장 중요한 데이터는 유저 아이디다.
