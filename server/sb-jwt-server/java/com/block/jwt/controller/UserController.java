@@ -1,5 +1,6 @@
 package com.block.jwt.controller;
 
+import com.block.jwt.dto.UserLoginResponse;
 import com.block.jwt.dto.UserRequest;
 import com.block.jwt.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,4 +29,27 @@ public class UserController {
         return ResponseEntity.status(201).build();
 
     }
+
+    @PostMapping("/api/users/login")
+    public ResponseEntity<UserLoginResponse> userLogin(@RequestBody UserRequest userRequest){
+        Object result = userService.userLogin(userRequest);
+        if (result instanceof Integer){
+            if((Integer)result == 1 || (Integer)result == 2){
+                return ResponseEntity.status(400).build();
+            }else if((Integer)result == 3){
+                return ResponseEntity.status(401).build();
+            }
+        }
+        return ResponseEntity.status(200)
+                .body(new UserLoginResponse((String)result));
+    }
+
 }
+
+
+
+
+
+
+
+

@@ -25,8 +25,8 @@ public class UserDAO {
     public User userLogin(UserRequest userRequest){
         String sql = "SELECT *\n" +
                 "from users\n" +
-                "WHERE  email = ? and password = ?  ; ";
-        return jdbcTemplate.queryForObject(sql, new UserRowMapper(), userRequest.email, userRequest.password);
+                "WHERE  email = ? ; ";
+        return jdbcTemplate.queryForObject(sql, new UserRowMapper(), userRequest.email);
     }
 
     public static class UserRowMapper implements RowMapper<User> {

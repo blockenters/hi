@@ -1,7 +1,9 @@
 package com.block.jwt.service;
 
+import com.block.jwt.config.JwtConfig;
 import com.block.jwt.dao.UserDAO;
 import com.block.jwt.dto.UserRequest;
+import com.block.jwt.entity.User;
 import com.block.jwt.util.EmailValidator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -14,6 +16,8 @@ public class UserService {
     PasswordEncoder passwordEncoder;
     @Autowired
     UserDAO userDAO;
+    @Autowired
+    JwtConfig jwtConfig;
 
     public int signUp(UserRequest userRequest) {
         // 이메일 주소가 유효한지 확인
@@ -45,4 +49,44 @@ public class UserService {
 
     }
 
+    public Object userLogin(UserRequest userRequest){
+
+        // 이메일 형식 체크
+        if (EmailValidator.isValidEmail(userRequest.email) == false) {
+            return 1;
+        }
+
+        // DB로 부터 유저 정보를 받아온다.
+        try{
+            User user = userDAO.userLogin(userRequest);
+
+            // 비밀번호가 맞는지 확인한다.
+            if( passwordEncoder.matches( userRequest.password ,user.password) == false){
+                // 비밀번호가 틀린경우.
+                return 3;
+            }
+
+            // 인증토큰을 발급한다. JWT 토큰을 발급한다.
+            // 가장 중요한 데이터는 유저 아이디다.
+            // 유저 아이디를 토대로 JWT 토큰을 발급한다.
+            String token = jwtConfig.createToken(user.id);
+            System.out.println("token : " + token);
+            return token;
+
+        } catch (Exception e) {
+            // 이메일이 없는 경우
+            return 2;
+        }
+
+    }
+
 }
+
+
+
+
+
+
+
+
+
