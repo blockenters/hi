@@ -36,6 +36,8 @@ DB없는 서버 개발 실습문제 : https://docs.google.com/document/d/1j63QG5
 
 JWT 인증 토큰 영상 : https://www.youtube.com/watch?v=tKG1Ojrbckk
 
+JWT 실습 : https://docs.google.com/presentation/d/13fGRVX9Xe_WLsk383ziS7Frf93fhyAvscHkP2FlE87s/edit?usp=sharing
+
 ---
 
 ## Git / Github 
