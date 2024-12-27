@@ -24,6 +24,14 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
 
     @Override
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws ServletException, IOException {
+
+        // signup, login 요청은 토큰 검증을 하지 않는다.
+        if(request.getRequestURI().equals("/api/users/signup") ||
+                request.getRequestURI().equals("/api/users/login")) {
+            filterChain.doFilter(request, response);
+            return;
+        }
+
         // 헤더에서 토큰을 가져온다.
         String bearerToken = request.getHeader("Authorization");
         // Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI0MSIsImlhdCI6MTczNTI2NTE3NiwiZXhwIjoxNzM1MzUxNTc2fQ.yoquDfBOHhR5YqJwOTbJ4WSUjtpvPRlRcSjNhFTXNAQ
