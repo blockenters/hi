@@ -1,3 +1,4 @@
+INSERT INTO user (email, password, nickname, role, created_at) VALUES 
 ('user1@gmail.com', '$2a$10$xxxxxxxxxxx1', '맛있는하루', 'USER', '2024-01-01 10:00:00'),
 ('user2@naver.com', '$2a$10$xxxxxxxxxxx2', '먹방탐험가', 'USER', '2024-01-02 11:30:00'),
 ('user3@gmail.com', '$2a$10$xxxxxxxxxxx3', '맛집여행', 'USER', '2024-01-03 09:15:00'),
