@@ -34,6 +34,9 @@ public class UserController {
 
     @PostMapping("/api/users/login")
     public ResponseEntity<UserLoginResponse> userLogin(@RequestBody UserRequest userRequest){
+
+        System.out.println("Login userRequest.email : " + userRequest.email);
+
         Object result = userService.userLogin(userRequest);
         if (result instanceof Integer){
             if((Integer)result == 1 || (Integer)result == 2){

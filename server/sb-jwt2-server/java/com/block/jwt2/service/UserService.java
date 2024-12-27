@@ -55,14 +55,20 @@ public class UserService {
 
     public Object userLogin(UserRequest userRequest){
 
+        System.out.println("Login service 1");
+
         // 이메일 형식 체크
         if (EmailValidator.isValidEmail(userRequest.email) == false) {
+            System.out.println("Login service 2");
             return 1;
         }
 
         // DB로 부터 유저 정보를 받아온다.
         try{
             User user = userDAO.userLogin(userRequest);
+
+            System.out.println("Login service 3");
+
             System.out.println("userId : " + user.id);
             // 비밀번호가 맞는지 확인한다.
             if( passwordEncoder.matches( userRequest.password ,user.password) == false){
