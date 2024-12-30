@@ -38,6 +38,8 @@ JWT 인증 토큰 영상 : https://www.youtube.com/watch?v=tKG1Ojrbckk
 
 JWT 실습 : https://docs.google.com/presentation/d/13fGRVX9Xe_WLsk383ziS7Frf93fhyAvscHkP2FlE87s/edit?usp=sharing
 
+JWT 실습2 : https://www.notion.so/API-1694a24679c080e6aca7f93bb4bf393e?pvs=4
+
 
 --- 
 
