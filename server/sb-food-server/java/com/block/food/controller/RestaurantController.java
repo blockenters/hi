@@ -15,12 +15,37 @@ public class RestaurantController {
     RestaurantService restaurantService;
 
     @GetMapping("/api/v1/restaurants")
-    public ResponseEntity<RestaurantListResponse> getRestaurants(@RequestParam int page, @RequestParam int size){
+    public ResponseEntity<RestaurantListResponse> getRestaurants(
+            @RequestParam int page,
+            @RequestParam int size,
+            @RequestParam(required = false) String category,
+            @RequestParam(required = false) String keyword){
 
-        RestaurantListResponse restaurantListResponse =
-                restaurantService.getRestaurants(page, size);
+        if( category == null && keyword == null){
+            RestaurantListResponse restaurantListResponse =
+                    restaurantService.getRestaurants(page, size);
+            return ResponseEntity.status(200).body(restaurantListResponse);
+        } else {
+            // 카테고리가 있고 키워드는 없는 경우
+            if( category != null && keyword == null){
+                RestaurantListResponse restaurantListResponse =
+                        restaurantService.getRestaurants(page, size, category, null);
+                return ResponseEntity.status(200).body(restaurantListResponse);
+            } else if(category == null && keyword != null){
+                // 카테고리가 없고 키워드가 있는 경우
 
-        return ResponseEntity.status(200).body(restaurantListResponse);
+                RestaurantListResponse restaurantListResponse =
+                        restaurantService.getRestaurants(page, size, null ,keyword);
+                return ResponseEntity.status(200).body(restaurantListResponse);
+
+            } else {
+                // 카테고리와 키워드가 모두 있는 경우
+                RestaurantListResponse restaurantListResponse =
+                        restaurantService.getRestaurants(page, size, category, keyword);
+                return ResponseEntity.status(200).body(restaurantListResponse);
+            }
+
+        }
 
     }
 }

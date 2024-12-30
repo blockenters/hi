@@ -38,6 +38,87 @@ public class RestaurantDAO {
     }
 
 
+    public List<RestaurantResponse> getRestaurants(int offset,
+                                                   int size,
+                                                   String category,
+                                                   String keyword) {
+        // 카테고리가 있고, 키워드가 없는 경우.
+        if(category != null && keyword == null){
+            String sql = "SELECT r.id, r.name, r.category, r.address, r.phone, r.description, \n" +
+                    "\t\t\tIFNULL(  avg(rv.rating) , 0)  avg_rating   ,\n" +
+                    "\t\t\tcount(rv.id)  review_count,\n" +
+                    "\t\t\tr.created_at\n" +
+                    "from restaurant r\n" +
+                    "left join review  rv\n" +
+                    "on r.id = rv.restaurant_id\n" +
+                    "where r.category = ? \n" +
+                    "group by r.id \n" +
+                    "order by r.created_at desc\n" +
+                    "limit ? , ? ;";
+            return jdbcTemplate.query(sql, new RestaurantRowMapper(), category, offset, size);
+        } else if(category == null && keyword != null){
+            // 카테고리가 없고, 키워드가 있는 경우.
+            String sql = "SELECT r.id, r.name, r.category, r.address, r.phone, r.description, \n" +
+                    "\t\t\tIFNULL(  avg(rv.rating) , 0)  avg_rating   ,\n" +
+                    "\t\t\tcount(rv.id)  review_count,\n" +
+                    "\t\t\tr.created_at\n" +
+                    "from restaurant r\n" +
+                    "left join review  rv\n" +
+                    "on r.id = rv.restaurant_id\n" +
+                    "where r.name like ? or r.address like ? \n" +
+                    "group by r.id \n" +
+                    "order by r.created_at desc\n" +
+                    "limit ? , ? ;";
+            return jdbcTemplate.query(sql, new RestaurantRowMapper(), "%"+keyword+"%", "%"+keyword+"%" , offset, size);
+        } else {
+            // 카테고리와 키워드 둘다 있는 경우
+            String sql = "SELECT r.id, r.name, r.category, r.address, r.phone, r.description, \n" +
+                    "\t\t\tIFNULL(  avg(rv.rating) , 0)  avg_rating   ,\n" +
+                    "\t\t\tcount(rv.id)  review_count,\n" +
+                    "\t\t\tr.created_at\n" +
+                    "from restaurant r\n" +
+                    "left join review  rv\n" +
+                    "on r.id = rv.restaurant_id\n" +
+                    "where (r.name like ? or r.address like ? ) and category = ? \n" +
+                    "group by r.id \n" +
+                    "order by r.created_at desc\n" +
+                    "limit ? ,  ? ;";
+            return jdbcTemplate.query(sql, new RestaurantRowMapper(), "%"+keyword+"%", "%"+keyword+"%", category, offset, size);
+        }
+
+
+
+
+
+
+
+    }
+
+    public int getTotalElements(String category, String keyword){
+
+        if(category != null && keyword == null){
+            // 카테고리는 있고, 키워드는 없는 경우
+            String sql = "SELECT count(*)\n" +
+                    "from restaurant\n" +
+                    "where category = ? ;";
+            return jdbcTemplate.queryForObject(sql, Integer.class, category);
+        } else if (category == null && keyword != null){
+            // 카테고리는 없고, 키워드만 있는 경우
+            String sql = "SELECT count(*)\n" +
+                    "from restaurant\n" +
+                    "where name like ? or address like ?;";
+            return jdbcTemplate.queryForObject(sql, Integer.class, "%"+keyword+"%", "%"+keyword+"%");
+        } else {
+            // 카테고리랑 키워드랑 둘다 있는 경우
+            String sql = "SELECT count(*)\n" +
+                    "from restaurant\n" +
+                    "where (name like ? or address like ?) and category = ? ;";
+            return jdbcTemplate.queryForObject(sql, Integer.class, "%"+keyword+"%", "%"+keyword+"%", category );
+        }
+
+
+    }
+
 
 
 

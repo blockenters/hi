@@ -32,4 +32,50 @@ public class RestaurantService {
         return restaurantListResponse;
 
     }
+
+    public RestaurantListResponse getRestaurants(int page,
+                                                 int size,
+                                                 String category,
+                                                 String keyword){
+        // 카테고리가 있고 키워드는 없는 경우
+        if(category != null && keyword == null){
+            int offset = (page - 1) * size;
+            List<RestaurantResponse> restaurantList = restaurantDAO.getRestaurants(offset, size, category, null);
+            int totalElements = restaurantDAO.getTotalElements(category, null);
+            int totalPages = (int) Math.ceil( (double) totalElements / size );
+
+            PageableResponse pageableResponse =
+                    new PageableResponse(page, size, totalElements,totalPages);
+            RestaurantListResponse restaurantListResponse =
+                    new RestaurantListResponse(restaurantList, pageableResponse);
+            return restaurantListResponse;
+        } else if(category == null && keyword != null){
+            // 카테고리가 없고 키워드가 있는 경우
+            int offset = (page - 1) * size;
+            List<RestaurantResponse> restaurantList = restaurantDAO.getRestaurants(offset, size, null, keyword);
+            int totalElements = restaurantDAO.getTotalElements(null, keyword);
+            int totalPages = (int) Math.ceil( (double) totalElements / size );
+
+            PageableResponse pageableResponse =
+                    new PageableResponse(page, size, totalElements,totalPages);
+            RestaurantListResponse restaurantListResponse =
+                    new RestaurantListResponse(restaurantList, pageableResponse);
+            return restaurantListResponse;
+        } else {
+            // 카테고리와 키워드가 모두 있는 경우
+            int offset = (page - 1) * size;
+            List<RestaurantResponse> restaurantList = restaurantDAO.getRestaurants(offset, size, category, keyword);
+            int totalElements = restaurantDAO.getTotalElements(category, keyword);
+            int totalPages = (int) Math.ceil( (double) totalElements / size );
+
+            PageableResponse pageableResponse =
+                    new PageableResponse(page, size, totalElements,totalPages);
+            RestaurantListResponse restaurantListResponse =
+                    new RestaurantListResponse(restaurantList, pageableResponse);
+            return restaurantListResponse;
+        }
+
+
+    }
+
 }
