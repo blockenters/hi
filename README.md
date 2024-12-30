@@ -41,14 +41,6 @@ JWT 실습 : https://docs.google.com/presentation/d/13fGRVX9Xe_WLsk383ziS7Frf93f
 
 --- 
 
-## UI / UX
-
-UI 소개 : https://docs.google.com/presentation/d/1j1f3Mm-CGXqcvVH-ibkWRK-pq6a5RouJON4pn4jdiHU/edit?usp=sharing
-
-HTML, CSS, Javascript 란 : https://docs.google.com/document/d/12-4-Y2BKF3jdU1oY63H3hvNmdtnBnt8X8GGGiqbMJtA/edit?usp=sharing
-
-
----
 
 
 
