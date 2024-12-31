@@ -1,0 +1,10 @@
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3307/food_db
+    username: adsdfmin
+    password: 210sdfsddsdf52105
+  jpa:
+    show-sql: true
+
+jwt:
+  secret: kdjeiwdj198273kdjdkskdjskdjdjdksjaldjfkljdjdj

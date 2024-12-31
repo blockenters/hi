@@ -1,0 +1,13 @@
+spring:
+  datasource:
+    url: jdbc:mysql://eduayzrtheast-2.rds.amazonaws.com:3306/food_db
+    username: addsdffmin
+    password: 2dsfsdf5
+  jpa:
+    show-sql: true
+
+jwt:
+  secret: kdjeiwdj198273kdjdkskdjskdjdjdksjaldjfkljdjdj
+
+server:
+  port: 80
