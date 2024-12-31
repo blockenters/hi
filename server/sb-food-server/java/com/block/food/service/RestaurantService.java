@@ -1,9 +1,7 @@
 package com.block.food.service;
 
 import com.block.food.dao.RestaurantDAO;
-import com.block.food.dto.PageableResponse;
-import com.block.food.dto.RestaurantListResponse;
-import com.block.food.dto.RestaurantResponse;
+import com.block.food.dto.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -77,5 +75,26 @@ public class RestaurantService {
 
 
     }
+    public RestaurantDetailResponse getRestaurantDetail(long id){
+        RestaurantResponse restaurantResponse =
+                restaurantDAO.getRestaurantDetail(id);
 
+        List<MenuResponse> menuList = restaurantDAO.getMenuList(id);
+
+        RestaurantDetailResponse restaurantDetailResponse =
+                new RestaurantDetailResponse();
+        restaurantDetailResponse.id = restaurantResponse.id;
+        restaurantDetailResponse.menus = menuList;
+        restaurantDetailResponse.address = restaurantResponse.address;
+        restaurantDetailResponse.createdAt = restaurantResponse.createdAt;
+        restaurantDetailResponse.avgRating = restaurantResponse.avgRating;
+        restaurantDetailResponse.category = restaurantResponse.category;
+        restaurantDetailResponse.description = restaurantResponse.description;
+        restaurantDetailResponse.name = restaurantResponse.name;
+        restaurantDetailResponse.phone = restaurantResponse.phone;
+        restaurantDetailResponse.reviewCount = restaurantResponse.reviewCount;
+
+        return restaurantDetailResponse;
+
+    }
 }

@@ -1,5 +1,6 @@
 package com.block.food.dao;
 
+import com.block.food.dto.MenuResponse;
 import com.block.food.dto.RestaurantResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -120,6 +121,45 @@ public class RestaurantDAO {
     }
 
 
+    public RestaurantResponse getRestaurantDetail(long id){
+        String sql = "SELECT r.id, r.name, r.category, r.address, r.phone, r.description, \n" +
+                "\t\t\tIFNULL(  avg(rv.rating) , 0)  avg_rating   ,\n" +
+                "\t\t\tcount(rv.id)  review_count,\n" +
+                "\t\t\tr.created_at\n" +
+                "from restaurant r\n" +
+                "left join review  rv\n" +
+                "on r.id = rv.restaurant_id\n" +
+                "where r.id = ? \n" +
+                "group by r.id;";
+        return jdbcTemplate.queryForObject(sql, new RestaurantRowMapper(), id );
+    }
+
+
+    public List<MenuResponse> getMenuList(long id){
+        String sql = "SELECT m.id, m.name, m.price, m.description, m.category , \n" +
+                "\t\t\tcount( r.id ) reviewCount\n" +
+                "from menu m \n" +
+                "left join review r \n" +
+                "on m.id = r.menu_id\n" +
+                "where m.restaurant_id =  ?  \n" +
+                "group by m.id;";
+        return jdbcTemplate.query(sql, new MenuRowMapper(), id );
+    }
+
+    public static class MenuRowMapper implements RowMapper<MenuResponse>{
+
+        @Override
+        public MenuResponse mapRow(ResultSet rs, int rowNum) throws SQLException {
+            MenuResponse menuResponse = new MenuResponse();
+            menuResponse.id = rs.getLong("id");
+            menuResponse.name = rs.getString("name");
+            menuResponse.price = rs.getInt("price");
+            menuResponse.description = rs.getString("description");
+            menuResponse.category = rs.getString("category");
+            menuResponse.reviewCount = rs.getInt("reviewCount");
+            return menuResponse;
+        }
+    }
 
 
     public static class RestaurantRowMapper implements RowMapper<RestaurantResponse> {
