@@ -44,6 +44,7 @@ JPA Entity 설명 : https://www.notion.so/JPA-Entity-16e4a24679c080258f2ac6fa206
 
 JPA Repository 설명 : https://www.notion.so/Spring-Data-JPA-Repository-16e4a24679c080aa8c69c6a218e6af3c?pvs=4
 
+Validation 사용해서 코드 줄이기 : https://www.notion.so/Spring-Validation-16e4a24679c0807da21dcb67d6c51d44?pvs=4
 
 --- 
 
