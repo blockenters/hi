@@ -40,6 +40,7 @@ JWT 실습 : https://docs.google.com/presentation/d/13fGRVX9Xe_WLsk383ziS7Frf93f
 
 JWT 실습2 : https://www.notion.so/API-1694a24679c080e6aca7f93bb4bf393e?pvs=4
 
+JPA 설명 : https://www.notion.so/Spring-Data-JPA-Repository-16e4a24679c080aa8c69c6a218e6af3c?pvs=4
 
 --- 
 
