@@ -40,11 +40,15 @@ JWT 실습 : https://docs.google.com/presentation/d/13fGRVX9Xe_WLsk383ziS7Frf93f
 
 JWT 실습2 : https://www.notion.so/API-1694a24679c080e6aca7f93bb4bf393e?pvs=4
 
+JPA 실습1 : https://www.notion.so/JPA-Order-API-16e4a24679c0809ebceee7139ad2a3f9?pvs=4
+
 JPA Entity 설명 : https://www.notion.so/JPA-Entity-16e4a24679c080258f2ac6fa2062a2df?pvs=4
 
 JPA Repository 설명 : https://www.notion.so/Spring-Data-JPA-Repository-16e4a24679c080aa8c69c6a218e6af3c?pvs=4
 
 Validation 사용해서 코드 줄이기 : https://www.notion.so/Spring-Validation-16e4a24679c0807da21dcb67d6c51d44?pvs=4
+
+JPA 실습2 : https://docs.google.com/presentation/d/1O_AsaV7SX-okVYatpLoTO1Wqlbb7myM8wRErSQwrCRY/edit?usp=sharing
 
 --- 
 
