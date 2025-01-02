@@ -1,5 +1,7 @@
 package com.block.admin.dao;
 
+import com.block.admin.dto.CategoryResponse;
+import com.block.admin.dto.DateResponse;
 import com.block.admin.dto.ReviewerResponse;
 import com.block.admin.dto.TotalResponse;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -52,12 +54,54 @@ public class CRMDAO {
     }
 
 
-    getByDate(){
-
+    public List<DateResponse> getByDate(long userId, String startDate, String endDate){
+        String sql = "SELECT date( created_at ) as date, \n" +
+                "\t\t\tcount(*) reviewCount,  \n" +
+                "\t\t\tavg(rating) averageRating\n" +
+                "from review\n" +
+                "where created_at BETWEEN ? and ? \n" +
+                "group by date( created_at )\n" +
+                "order by date asc;";
+        return jdbcTemplate.query(sql, new DateRowMapper(), startDate, endDate);
     }
 
-    getByCategory(){
+    public static class DateRowMapper implements RowMapper<DateResponse>{
 
+        @Override
+        public DateResponse mapRow(ResultSet rs, int rowNum) throws SQLException {
+            DateResponse dateResponse = new DateResponse();
+            dateResponse.date = rs.getString("date");
+            dateResponse.reviewCount = rs.getInt("reviewCount");
+            dateResponse.averageRating = rs.getDouble("averageRating");
+            return dateResponse;
+        }
+    }
+
+
+
+    public List<CategoryResponse> getByCategory(long userId, String startDate, String endDate){
+        String sql = "SELECT rt.category  , \n" +
+                "\t\t\tcount(*) reviewCount,  \n" +
+                "\t\t\tavg( r.rating ) averageRating\n" +
+                "from review r\n" +
+                "join restaurant rt \n" +
+                "on r.restaurant_id = rt.id\n" +
+                "where r.created_at BETWEEN ? and ? \n" +
+                "GROUP by rt.category\n" +
+                "order by reviewCount desc;";
+        return jdbcTemplate.query(sql, new CategoryRowMapper(), startDate, endDate);
+    }
+
+    public static class CategoryRowMapper implements RowMapper<CategoryResponse>{
+
+        @Override
+        public CategoryResponse mapRow(ResultSet rs, int rowNum) throws SQLException {
+            CategoryResponse categoryResponse = new CategoryResponse();
+            categoryResponse.category = rs.getString("category");
+            categoryResponse.reviewCount = rs.getInt("reviewCount");
+            categoryResponse.averageRating = rs.getDouble("averageRating");
+            return categoryResponse;
+        }
     }
 
 

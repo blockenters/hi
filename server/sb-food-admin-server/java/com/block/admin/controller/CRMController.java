@@ -1,6 +1,7 @@
 package com.block.admin.controller;
 
 import com.block.admin.dto.ReviewerListResponse;
+import com.block.admin.dto.StatResponse;
 import com.block.admin.service.CRMService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -24,11 +25,12 @@ public class CRMController {
     }
 
     @GetMapping("/api/v1/admin/crm/reviews/stats")
-    getStats(@RequestHeader("Authorization") String token,
-             @RequestParam("startDate") String startDate,
-             @RequestParam("endDate") String endDate) {
+    public ResponseEntity<StatResponse> getStats(@RequestHeader("Authorization") String token,
+                                          @RequestParam("startDate") String startDate,
+                                          @RequestParam("endDate") String endDate) {
 
-        crmService.getStats(token, startDate, endDate);
+        StatResponse statResponse = crmService.getStats(token, startDate, endDate);
+        return ResponseEntity.status(200).body(statResponse);
 
     }
 
