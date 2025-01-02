@@ -29,7 +29,7 @@ public class SecurityConfig {
         http.csrf(AbstractHttpConfigurer::disable)
                 .authorizeHttpRequests(auth -> auth
                         .requestMatchers("/api/v1/admin/signup",
-                                                " /api/v1/admin/login").permitAll()
+                                                "/api/v1/admin/login").permitAll()
                         .anyRequest().authenticated()  )
                 .addFilterBefore(jwtAuthenticationFilter, UsernamePasswordAuthenticationFilter.class);
         return http.build();
