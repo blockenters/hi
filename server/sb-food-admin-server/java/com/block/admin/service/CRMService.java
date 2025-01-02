@@ -22,4 +22,11 @@ public class CRMService {
         List<ReviewerResponse> reviewerList = crmDAO.getTopReviewers(userId, size);
         return new ReviewerListResponse(reviewerList);
     }
+
+    getStats(String token, String startDate, String endDate){
+        long userId = Long.parseLong(jwtConfig.getTokenClaims(token.substring(7)).getSubject());
+        = crmDAO.getTotal(userId, startDate, endDate);
+        = crmDAO.getByDate(userId, startDate, endDate);
+        = crmDAO.getByCategory(userId, startDate, endDate);
+    }
 }

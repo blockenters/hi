@@ -23,4 +23,13 @@ public class CRMController {
        return ResponseEntity.status(200).body(reviewerListResponse);
     }
 
+    @GetMapping("/api/v1/admin/crm/reviews/stats")
+    getStats(@RequestHeader("Authorization") String token,
+             @RequestParam("startDate") String startDate,
+             @RequestParam("endDate") String endDate) {
+
+        crmService.getStats(token, startDate, endDate);
+
+    }
+
 }

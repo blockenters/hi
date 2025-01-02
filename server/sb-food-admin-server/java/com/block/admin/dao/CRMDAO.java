@@ -1,6 +1,7 @@
 package com.block.admin.dao;
 
 import com.block.admin.dto.ReviewerResponse;
+import com.block.admin.dto.TotalResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
@@ -30,6 +31,36 @@ public class CRMDAO {
                 "limit ? ;";
         return jdbcTemplate.query(sql, new ReviewerRowMapper(), size );
     }
+
+
+    public TotalResponse getTotal(long userId, String startDate, String endDate){
+        String sql = "SELECT  count(*) reviewCount , avg(rating) averageRating\n" +
+                "from review\n" +
+                "where created_at BETWEEN ? and ?;";
+        return jdbcTemplate.queryForObject(sql, new TotalRowMapper(), startDate, endDate);
+    }
+
+    public static class TotalRowMapper implements RowMapper<TotalResponse>{
+
+        @Override
+        public TotalResponse mapRow(ResultSet rs, int rowNum) throws SQLException {
+            TotalResponse totalResponse = new TotalResponse();
+            totalResponse.reviewCount = rs.getInt("reviewCount");
+            totalResponse.averageRating = rs.getDouble("averageRating");
+            return totalResponse;
+        }
+    }
+
+
+    getByDate(){
+
+    }
+
+    getByCategory(){
+
+    }
+
+
 
     public static class ReviewerRowMapper implements RowMapper<ReviewerResponse>{
 
