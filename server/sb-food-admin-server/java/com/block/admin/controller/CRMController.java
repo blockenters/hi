@@ -1,5 +1,6 @@
 package com.block.admin.controller;
 
+import com.block.admin.dto.PopularListResponse;
 import com.block.admin.dto.ReviewerListResponse;
 import com.block.admin.dto.StatResponse;
 import com.block.admin.service.CRMService;
@@ -31,6 +32,18 @@ public class CRMController {
 
         StatResponse statResponse = crmService.getStats(token, startDate, endDate);
         return ResponseEntity.status(200).body(statResponse);
+
+    }
+
+    @GetMapping("/api/v1/admin/crm/restaurants/popular")
+    public ResponseEntity<PopularListResponse> getPopular(@RequestHeader("Authorization") String token,
+                                                   @RequestParam(value = "category", required = false) String category,
+                                                   @RequestParam(value = "minReviews", required = false) Integer minReviews) {
+
+        PopularListResponse popularListResponse =
+                crmService.getPopular(token, category, minReviews);
+
+        return ResponseEntity.status(200).body(popularListResponse);
 
     }
 

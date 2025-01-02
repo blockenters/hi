@@ -1,9 +1,6 @@
 package com.block.admin.dao;
 
-import com.block.admin.dto.CategoryResponse;
-import com.block.admin.dto.DateResponse;
-import com.block.admin.dto.ReviewerResponse;
-import com.block.admin.dto.TotalResponse;
+import com.block.admin.dto.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
@@ -119,4 +116,34 @@ public class CRMDAO {
             return reviewerResponse;
         }
     }
+
+    public List<PopularResponse> getPopular(){
+        String sql = "SELECT r.id, r.name , r.category,\n" +
+                "\t\t\tcount(rv.id) reviewCount, \n" +
+                "\t\t\tavg(rv.rating) averageRating, \n" +
+                "\t\t\tmax(rv.created_at) lastReviewDate\n" +
+                "from restaurant r \n" +
+                "join review rv \n" +
+                "on r.id = rv.restaurant_id\n" +
+                "group by r.id  \n" +
+                "order by reviewCount desc;";
+        return jdbcTemplate.query(sql, new PopularRowMapper() );
+    }
+
+    public static class PopularRowMapper implements RowMapper<PopularResponse>{
+
+        @Override
+        public PopularResponse mapRow(ResultSet rs, int rowNum) throws SQLException {
+            PopularResponse popularResponse = new PopularResponse();
+            popularResponse.id = rs.getLong("id");
+            popularResponse.name = rs.getString("name");
+            popularResponse.category = rs.getString("category");
+            popularResponse.reviewCount = rs.getInt("reviewCount");
+            popularResponse.averageRating = rs.getDouble("averageRating");
+            popularResponse.lastReviewDate = rs.getString("lastReviewDate");
+            return popularResponse;
+        }
+    }
+
+
 }
