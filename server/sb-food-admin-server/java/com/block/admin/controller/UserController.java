@@ -1,5 +1,6 @@
 package com.block.admin.controller;
 
+import com.block.admin.dto.UserLoginResponse;
 import com.block.admin.dto.UserRequest;
 import com.block.admin.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,5 +22,15 @@ public class UserController {
             return ResponseEntity.status(400).build();
         }
         return ResponseEntity.status(201).build();
+    }
+
+    @PostMapping("/api/v1/admin/login")
+    public ResponseEntity<UserLoginResponse> login(@RequestBody UserRequest userRequest){
+        Object result = userService.login(userRequest);
+        if (result instanceof Integer){
+            return ResponseEntity.status(400).build();
+        }else{
+            return ResponseEntity.status(200).body(new UserLoginResponse((String) result));
+        }
     }
 }

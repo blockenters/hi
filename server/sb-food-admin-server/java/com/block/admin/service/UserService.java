@@ -1,7 +1,9 @@
 package com.block.admin.service;
 
+import com.block.admin.config.JwtConfig;
 import com.block.admin.dao.UserDAO;
 import com.block.admin.dto.UserRequest;
+import com.block.admin.enetity.User;
 import com.block.admin.util.EmailValidator;
 import com.block.admin.util.NicknameValidator;
 import com.block.admin.util.PasswordValidator;
@@ -17,6 +19,9 @@ public class UserService {
 
     @Autowired
     UserDAO userDAO;
+
+    @Autowired
+    JwtConfig jwtConfig;
 
     public int signUp(UserRequest userRequest){
         // 1. 이메일이 유효한 형식인지 확인.
@@ -45,5 +50,28 @@ public class UserService {
         return 0;
 
     }
+
+    public Object login(UserRequest userRequest){
+        // 1. 이메일이 유효한지 체크.
+        if(EmailValidator.isValidEmail(userRequest.email) == false){
+            return 1;
+        }
+        // 2. DB로 부터 데이터를 가져온다.
+        try {
+            User user = userDAO.login(userRequest);
+            // 4. 패스워드가 맞는지 확인
+            if( passwordEncoder.matches(userRequest.password, user.password) == false){
+                return 3;
+            }
+            // 5. 토큰을 만들어서 반환한다.
+            String token = jwtConfig.createToken(user.id);
+            return token;
+        }catch (Exception e){
+            // 3. 유저가 없는지 확인
+            return 2;
+        }
+
+    }
+
 
 }
