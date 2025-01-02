@@ -40,6 +40,8 @@ JWT 실습 : https://docs.google.com/presentation/d/13fGRVX9Xe_WLsk383ziS7Frf93f
 
 JWT 실습2 : https://www.notion.so/API-1694a24679c080e6aca7f93bb4bf393e?pvs=4
 
+리뷰 작성 API 에서, 사진도 같이 보내보자! 맨 아래 API 구현 https://www.notion.so/API-1694a24679c0807fb36bcf5f92e2d3b5
+
 JPA 실습1 : https://www.notion.so/JPA-Order-API-16e4a24679c0809ebceee7139ad2a3f9?pvs=4
 
 JPA Entity 설명 : https://www.notion.so/JPA-Entity-16e4a24679c080258f2ac6fa2062a2df?pvs=4
