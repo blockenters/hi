@@ -10,6 +10,14 @@
 
 ---
 
+DB 잘 모르는 분들은 
+
+AWS RDS 설치 동영상 : https://www.youtube.com/watch?v=GxbvKMKARgY
+
+DBeaver 설정 동영상 : https://www.youtube.com/watch?v=Ji2KUtKeqqw
+
+---
+
 ## Spring Boot
 
 Restful API 설명 동영상 : https://www.youtube.com/watch?v=2UlpD5wnZs0
