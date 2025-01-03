@@ -35,34 +35,40 @@ public class ReviewService {
         // 1. 토큰에서 userId를 뽑아낸다.
         long userId = Long.parseLong( jwtConfig.getTokenClaims(token.substring(7) ).getSubject() );
 
-        // 2. 이미지를 S3에 업로드한다.
-        // 2-1. 이미지 파일 이름을 유니크하게 생성한다.
-        String fileName = UniqueFileNameGenerator.generateUniqueFileName(userId, ".jpg");
-        // 2-2. S3에 업로드 하기 위한 Request 객체를 생성한다.
-        PutObjectRequest putObjectRequest = PutObjectRequest.builder()
-                .bucket(bucketName)
-                .key(fileName)
-                .contentLength(image.getSize())
-                .contentType(image.getContentType())
-                .acl(ObjectCannedACL.PUBLIC_READ)
-                .build();
-        // 2-3. S3에 이미지를 업로드한다.
-        try {
-            s3Client.putObject(putObjectRequest,
-                    RequestBody.fromInputStream(image.getInputStream(), image.getSize()));
-        } catch (IOException e) {
-            throw new RuntimeException(e);
+        if(image != null) {
+            // 2. 이미지를 S3에 업로드한다.
+            // 2-1. 이미지 파일 이름을 유니크하게 생성한다.
+            String fileName = UniqueFileNameGenerator.generateUniqueFileName(userId, ".jpg");
+            // 2-2. S3에 업로드 하기 위한 Request 객체를 생성한다.
+            PutObjectRequest putObjectRequest = PutObjectRequest.builder()
+                    .bucket(bucketName)
+                    .key(fileName)
+                    .contentLength(image.getSize())
+                    .contentType(image.getContentType())
+                    .acl(ObjectCannedACL.PUBLIC_READ)
+                    .build();
+            // 2-3. S3에 이미지를 업로드한다.
+            try {
+                s3Client.putObject(putObjectRequest,
+                        RequestBody.fromInputStream(image.getInputStream(), image.getSize()));
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+            // 3. 이미지 URL을 가져온다. (S3에 업로드한 이미지 URL)
+            String imageUrl = String.format("https://%s.s3.amazonaws.com/%s", bucketName, fileName);
+
+            System.out.println("imageUrl = " + imageUrl);
+
+            // 4. DB에 저장하도록 DAO에 요청한다.
+            reviewDAO.createReviewPhoto(userId, restaurantId,
+                    menuId, rating, content, imageUrl);
+            return 0;
+        } else {
+
+            reviewDAO.createReviewPhoto(userId, restaurantId, menuId, rating, content);
+            return 0;
         }
-        // 3. 이미지 URL을 가져온다. (S3에 업로드한 이미지 URL)
-        String imageUrl = String.format("https://%s.s3.amazonaws.com/%s", bucketName, fileName);
 
-        System.out.println("imageUrl = " + imageUrl);
-
-        // 4. DB에 저장하도록 DAO에 요청한다.
-        reviewDAO.createReviewPhoto(userId, restaurantId,
-                menuId, rating, content, imageUrl);
-
-        return 0;
     }
 
 

@@ -21,6 +21,14 @@ public class ReviewDAO {
 
     }
 
+    public int createReviewPhoto(long userId, long restaurantId, long menuId,
+                    String strRating, String content){
+        int rating = Integer.parseInt(strRating);
+        String sql = "insert INTO review (user_id, restaurant_id, menu_id, rating, content)\n" +
+                "values (? , ? , ? , ? , ? );";
+        return jdbcTemplate.update(sql, userId, restaurantId, menuId, rating, content);
+    }
+
 
 
     public int createReview(long userId, ReviewRequest reviewRequest){

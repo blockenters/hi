@@ -21,10 +21,14 @@ public class ReviewController {
                          @PathVariable long menuId,
                          @RequestParam("rating") String rating,
                          @RequestParam("content") String content,
-                         @RequestParam("image") MultipartFile image){
+                         @RequestParam(value = "image", required = false) MultipartFile image){
 
-        reviewService.createReviewPhoto(token, restaurantId, menuId,
-                                        rating, content, image);
+        try {
+            reviewService.createReviewPhoto(token, restaurantId, menuId,
+                    rating, content, image);
+        } catch (Exception e) {
+            return ResponseEntity.status(400).build();
+        }
 
         return ResponseEntity.status(201).build();
     }
