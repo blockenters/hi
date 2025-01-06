@@ -38,4 +38,27 @@ public class OrderService {
             throw new RuntimeException();
         }
     }
+
+     public void updateOrder(long id, OrderRequest orderRequest){
+
+        Optional<Order> order = orderRepository.findById(id);
+        if (order.isPresent()){
+            Order savedOrder = order.get();
+            savedOrder.productName = orderRequest.productName;
+            savedOrder.quantity = orderRequest.quantity;
+            savedOrder.totalPrice = orderRequest.totalPrice;
+            orderRepository.save(savedOrder);
+        }else{
+            throw new RuntimeException();
+        }
+    }
+
+    public void deleteOrder(long id){
+        if( orderRepository.existsById(id) ){
+            orderRepository.deleteById(id);
+        }else{
+            throw new RuntimeException();
+        }
+    }
+
 }

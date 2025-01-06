@@ -1,5 +1,6 @@
 package com.order.orderjpa.controller;
 
+import com.order.orderjpa.dto.ErrorResponse;
 import com.order.orderjpa.dto.OrderRequest;
 import com.order.orderjpa.dto.OrderResponse;
 import com.order.orderjpa.service.OrderService;
@@ -28,6 +29,27 @@ public class OrderController {
            return ResponseEntity.status(404).build();
        }
 
+    }
+
+    @PutMapping("/orders/{id}")
+    public ResponseEntity<Void> updateOrder(@PathVariable long id,
+                                       @RequestBody OrderRequest orderRequest){
+        try {
+            orderService.updateOrder(id, orderRequest);
+            return ResponseEntity.status(200).build();
+        } catch (Exception e) {
+            return ResponseEntity.status(400).build();
+        }
+    }
+
+    @DeleteMapping("/orders/{id}")
+    public ResponseEntity<ErrorResponse> deleteOrder(@PathVariable long id){
+        try {
+            orderService.deleteOrder(id);
+            return ResponseEntity.status(204).build();
+        } catch (Exception e) {
+            return ResponseEntity.status(404).body(new ErrorResponse("주문을 찾을 수 없습니다. ID: "+id));
+        }
     }
 
 }
