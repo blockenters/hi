@@ -1,13 +1,18 @@
 package com.order.orderjpa.service;
 
+import com.order.orderjpa.dto.OrderItemResponse;
 import com.order.orderjpa.dto.OrderRequest;
 import com.order.orderjpa.dto.OrderResponse;
 import com.order.orderjpa.entity.Order;
 import com.order.orderjpa.exception.OrderNotFoundException;
 import com.order.orderjpa.repository.OrderRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageImpl;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.Optional;
 
 @Service
@@ -61,4 +66,29 @@ public class OrderService {
         }
     }
 
+    public PageImpl<OrderItemResponse>  getAllOrders(Pageable pageable){
+
+        // 데이터를 JSON 으로 보내기위해, Entity 를 DTO 로 만들기.
+        Page<Order> orderPage  = orderRepository.findAll(pageable);
+
+        ArrayList<OrderItemResponse> orderList = new ArrayList<>();
+
+        for( Order order  :  orderPage){
+            OrderItemResponse orderItemResponse = new OrderItemResponse();
+            orderItemResponse.id = order.id;
+            orderItemResponse.productName = order.productName;
+            orderItemResponse.quantity = order.quantity;
+            orderItemResponse.totalPrice = order.totalPrice;
+            orderItemResponse.orderDate = order.orderDate.toString();
+
+            orderList.add(orderItemResponse);
+        }
+        return new PageImpl<>(orderList, pageable, orderPage.getTotalElements());
+    }
+
 }
+
+
+
+
+
