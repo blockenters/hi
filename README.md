@@ -1,5 +1,7 @@
 # 하이미디어 KDT
 
+작업한 파일 업로드 폴더 : https://drive.google.com/drive/folders/1Kg8Dl4T23f_KoYfmEtOP6sOUeJLvY0UZ?usp=sharing
+
 이메일 : blockenters@gmail.com 
 
 과정 소개 : https://docs.google.com/presentation/d/1oy0Jm1pcYQ9ybVHD8psUNEq1dqFqz3AqB4b60gpWQjc/edit?usp=sharing
