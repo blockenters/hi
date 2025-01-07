@@ -27,7 +27,8 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
 
         // signup, login 요청은 토큰 검증을 하지 않는다.
         if(request.getRequestURI().equals("/api/auth/signup") ||
-                request.getRequestURI().equals("/api/auth/login")) {
+                request.getRequestURI().equals("/api/auth/login") ||
+                request.getRequestURI().startsWith("/api/products")) {
             filterChain.doFilter(request, response);
             return;
         }

@@ -1,5 +1,6 @@
 package com.block.jpareview.service;
 
+import com.block.jpareview.dto.ProductListResponse;
 import com.block.jpareview.dto.ProductResponse;
 import com.block.jpareview.entity.Product;
 import com.block.jpareview.repository.ProductRepository;
@@ -19,7 +20,7 @@ public class ProductService {
     @Autowired
     ReviewRepository reviewRepository;
 
-    getAllProducts(int page, int size, String category){
+    public ProductListResponse getAllProducts(int page, int size, String category){
 
         if(category == null){
             PageRequest pageRequest = PageRequest.of(page-1, size);
@@ -42,10 +43,18 @@ public class ProductService {
                 // 리스트에 저장한다.
                 productList.add(productResponse);
             }
+            ProductListResponse productListResponse =
+                    new ProductListResponse();
+            productListResponse.content = productList;
+            productListResponse.page = page;
+            productListResponse.size = size;
+            productListResponse.totalElements = productPage.getTotalElements();
+            productListResponse.totalPages = productPage.getTotalPages();
 
+            return productListResponse;
 
         }else{
-
+            return null;
         }
     }
 }

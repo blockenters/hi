@@ -1,18 +1,27 @@
 package com.block.jpareview.controller;
 
+import com.block.jpareview.dto.ProductListResponse;
+import com.block.jpareview.service.ProductService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class ProductController {
+    @Autowired
+    ProductService productService;
 
     @GetMapping("/api/products")
-    getAllProducts(@RequestParam int page,
-                   @RequestParam int size,
-                   @RequestParam(required = false) String category){
+    public ResponseEntity<ProductListResponse> getAllProducts(@RequestParam int page,
+                                                       @RequestParam int size,
+                                                       @RequestParam(required = false) String category){
 
-        = productService.getAllProducts(page, size, category);
+        ProductListResponse productListResponse =
+                productService.getAllProducts(page, size, category);
+
+        return ResponseEntity.status(200).body(productListResponse);
 
     }
 }
