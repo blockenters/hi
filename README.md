@@ -64,6 +64,10 @@ Validation 사용해서 코드 줄이기 : https://www.notion.so/Spring-Validati
 
 JPA 실습2 : https://docs.google.com/presentation/d/1O_AsaV7SX-okVYatpLoTO1Wqlbb7myM8wRErSQwrCRY/edit?usp=sharing
 
+네이버 뉴스 검색 API 활용 : https://www.notion.so/1744a24679c080e5abc4c0524864bc8e?pvs=4
+
+유튜브 검색 API 활용 : https://www.notion.so/YouTube-1744a24679c0800bbe74eea3dc05ae14?pvs=4
+
 --- 
 
 
