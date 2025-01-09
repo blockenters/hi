@@ -28,7 +28,7 @@ public class Course {
     @Column
     public Instant createdAt;
 
-    @OneToMany(mappedBy = "course")
+    @OneToMany(mappedBy = "course")  // Place Entity 의 course 멤버변수
     public List<Place> placeList = new ArrayList<>();
 
     @PrePersist

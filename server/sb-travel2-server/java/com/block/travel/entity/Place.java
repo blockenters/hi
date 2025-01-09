@@ -31,7 +31,7 @@ public class Place {
     @Column
     public Instant createdAt;
 
-    @OneToMany(mappedBy = "place")
+    @OneToMany(mappedBy = "place")  // Photo 클래스의 멤버변수 place를 가르킨다.
     public List<Photo> photoList = new ArrayList<>();
 
     @PrePersist
