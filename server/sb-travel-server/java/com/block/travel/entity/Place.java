@@ -31,9 +31,6 @@ public class Place {
     @Column
     public Instant createdAt;
 
-    @OneToMany(mappedBy = "place")
-    public List<Photo> photoList = new ArrayList<>();
-
     @PrePersist
     public void prePersist() {
         this.createdAt = Instant.now();
