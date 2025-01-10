@@ -73,7 +73,45 @@ public class CourseService {
 
         }else{
             // 키워드 있는 경우
-            return null;
+            // 페이징 처리를 위해서 Pageable 만든다.
+            String[] sortArray = sort.split(",");
+            // sortArray[0] => "totalCost"
+            // sortArray[1] => "desc"
+            Sort.Direction direction = null;
+            if(sortArray[1].equals("desc")){
+                direction = Sort.Direction.DESC;
+            }else{
+                direction = Sort.Direction.ASC;
+            }
+            PageRequest pageRequest = PageRequest.of(page-1, size, Sort.by(direction, sortArray[0]));
+
+            Page<Course> coursePage = courseRepository.findByTitleContains( keyword, pageRequest);
+
+            // 결과를 DTO로 만든다.
+            ArrayList<CoursePlaceResponse> courseList = new ArrayList<>();
+            for( Course course  : coursePage){
+                CoursePlaceResponse coursePlaceResponse =
+                        new CoursePlaceResponse();
+                coursePlaceResponse.id = course.id;
+                coursePlaceResponse.title = course.title;
+                coursePlaceResponse.region = course.region;
+                coursePlaceResponse.duration = course.duration;
+                coursePlaceResponse.totalCost = course.totalCost;
+                coursePlaceResponse.writer = new UserResponse(course.user.id, course.user.nickname);
+                coursePlaceResponse.placeCount = course.placeList.size();
+                coursePlaceResponse.createdAt = course.createdAt.toString();
+                courseList.add(coursePlaceResponse);
+            }
+
+            CourseListResponse courseListResponse =
+                    new CourseListResponse();
+            courseListResponse.content = courseList;
+            courseListResponse.page = page;
+            courseListResponse.size = size;
+            courseListResponse.totalElements = coursePage.getTotalElements();
+            courseListResponse.totalPages = coursePage.getTotalPages();
+
+            return courseListResponse;
         }
     }
 
