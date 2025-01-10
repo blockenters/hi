@@ -55,8 +55,7 @@ public class CourseService {
                 coursePlaceResponse.region = course.region;
                 coursePlaceResponse.duration = course.duration;
                 coursePlaceResponse.totalCost = course.totalCost;
-                coursePlaceResponse.writer.setId( course.user.id);
-                coursePlaceResponse.writer.setNickname( course.user.nickname );
+                coursePlaceResponse.writer = new UserResponse(course.user.id, course.user.nickname);
                 coursePlaceResponse.placeCount = course.placeList.size();
                 coursePlaceResponse.createdAt = course.createdAt.toString();
                 courseList.add(coursePlaceResponse);
