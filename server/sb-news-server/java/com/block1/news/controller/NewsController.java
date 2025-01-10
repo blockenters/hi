@@ -15,8 +15,11 @@ public class NewsController {
 
     @GetMapping("/api/v1/news/search")
     public ResponseEntity<NewsSearchResponse> getNews(@RequestParam("keyword") String keyword ){
-       NewsSearchResponse newsSearchResponse =
-               newsService.getNews(keyword);
+//       NewsSearchResponse newsSearchResponse =
+//               newsService.getNews(keyword);
+        NewsSearchResponse newsSearchResponse =
+                newsService.getNews2(keyword);
+
        return ResponseEntity.status(200).body(newsSearchResponse);
     }
 
