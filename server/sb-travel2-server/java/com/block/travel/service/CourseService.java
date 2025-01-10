@@ -1,9 +1,6 @@
 package com.block.travel.service;
 
-import com.block.travel.dto.CourseResponse;
-import com.block.travel.dto.PhotoResponse;
-import com.block.travel.dto.PlaceResponse;
-import com.block.travel.dto.UserResponse;
+import com.block.travel.dto.*;
 import com.block.travel.entity.Course;
 import com.block.travel.entity.Photo;
 import com.block.travel.entity.Place;
@@ -11,6 +8,9 @@ import com.block.travel.repository.CourseRepository;
 import com.block.travel.repository.PhotoRepository;
 import com.block.travel.repository.PlaceRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -25,6 +25,60 @@ public class CourseService {
     private PlaceRepository placeRepository;
     @Autowired
     private PhotoRepository photoRepository;
+
+    getAllCourses(int page, int size, String sort, String keyword){
+        if(keyword == null){
+            // 키워드 없는경우
+
+            // 페이징 처리를 위해서 Pageable 만든다.
+            String[] sortArray = sort.split(",");
+            // sortArray[0] => "totalCost"
+            // sortArray[1] => "desc"
+            Sort.Direction direction = null;
+            if(sortArray[1].equals("desc")){
+                direction = Sort.Direction.DESC;
+            }else{
+                direction = Sort.Direction.ASC;
+            }
+            PageRequest pageRequest = PageRequest.of(page-1, size, Sort.by(direction, sortArray[0]));
+
+            // DB에 쿼리한다.
+            Page<Course> coursePage = courseRepository.findAll(pageRequest);
+
+            // 결과를 DTO로 만든다.
+            ArrayList<CoursePlaceResponse> courseList = new ArrayList<>();
+            for( Course course  : coursePage){
+                CoursePlaceResponse coursePlaceResponse =
+                        new CoursePlaceResponse();
+                coursePlaceResponse.id = course.id;
+                coursePlaceResponse.title = course.title;
+                coursePlaceResponse.region = course.region;
+                coursePlaceResponse.duration = course.duration;
+                coursePlaceResponse.totalCost = course.totalCost;
+                coursePlaceResponse.writer.setId( course.user.id);
+                coursePlaceResponse.writer.setNickname( course.user.nickname );
+                coursePlaceResponse.placeCount = course.placeList.size();
+                coursePlaceResponse.createdAt = course.createdAt.toString();
+                courseList.add(coursePlaceResponse);
+            }
+
+            CourseListResponse courseListResponse =
+                                    new CourseListResponse();
+            courseListResponse.content = courseList;
+            courseListResponse.page = page;
+            courseListResponse.size = size;
+            courseListResponse.totalElements = coursePage.getTotalElements();
+            courseListResponse.totalPages = coursePage.getTotalPages();
+
+            return courseListResponse;
+
+        }else{
+            // 키워드 있는 경우
+            return null;
+        }
+    }
+
+
 
     public CourseResponse getCourse(long courseId){
         // 1. db에서 데이터를 가져온다.
