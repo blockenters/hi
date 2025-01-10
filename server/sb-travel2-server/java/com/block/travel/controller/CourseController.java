@@ -1,5 +1,6 @@
 package com.block.travel.controller;
 
+import com.block.travel.dto.CourseListResponse;
 import com.block.travel.dto.CourseResponse;
 import com.block.travel.service.CourseService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,11 +16,13 @@ public class CourseController {
     CourseService courseService;
 
     @GetMapping("/api/v1/courses")
-    getAllCourses(@RequestParam("page") int page,
-                  @RequestParam("size") int size,
-                  @RequestParam("sort") String sort,
-                  @RequestParam(value = "keyword", required = false) String keyword){
-        = courseService.getAllCourses(page, size, sort, keyword);
+    public ResponseEntity<CourseListResponse> getAllCourses(@RequestParam("page") int page,
+                                                     @RequestParam("size") int size,
+                                                     @RequestParam("sort") String sort,
+                                                     @RequestParam(value = "keyword", required = false) String keyword){
+       CourseListResponse courseListResponse =
+               courseService.getAllCourses(page, size, sort, keyword);
+       return ResponseEntity.status(200).body(courseListResponse);
     }
 
 

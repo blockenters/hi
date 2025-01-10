@@ -14,7 +14,7 @@ public class CoursePlaceResponse {
     public String region;
     public Integer duration;
     public Integer totalCost;
-    public UserResponse writer;
+    public UserResponse writer = new UserResponse();
     public Integer placeCount;
     public String createdAt;
 

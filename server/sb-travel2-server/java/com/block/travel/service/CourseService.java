@@ -26,7 +26,7 @@ public class CourseService {
     @Autowired
     private PhotoRepository photoRepository;
 
-    getAllCourses(int page, int size, String sort, String keyword){
+    public CourseListResponse getAllCourses(int page, int size, String sort, String keyword){
         if(keyword == null){
             // 키워드 없는경우
 
