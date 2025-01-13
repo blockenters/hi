@@ -70,6 +70,8 @@ JPA 실습2 : https://docs.google.com/presentation/d/1O_AsaV7SX-okVYatpLoTO1Wqlb
 
 유튜브 검색 API 활용 : https://www.notion.so/YouTube-1744a24679c0800bbe74eea3dc05ae14?pvs=4
 
+OpenAPI 실습 : https://www.notion.so/Open-API-17a4a24679c08041a829df033add471f?pvs=4
+
 --- 
 
 
