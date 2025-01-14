@@ -74,9 +74,9 @@ OpenAPI 실습 : https://www.notion.so/Open-API-17a4a24679c08041a829df033add471f
 
 ec2에 파일질라로 배포하기 : 로컬에서 jar 만들기, 파일질라로 ec2에 보내기, ec2에서 실행 명령 하기
 
-ec2에 깃으로 배포하기 : 로컬에서 git 커밋 / 푸시하기, ec2에 github repository clone 하기, ec2에서 실행 명령 하기
+ec2에 깃으로 배포하기 : 로컬에서 git 커밋 / 푸시하기, ec2에 github repository clone 하기, ec2에서 jar 만들고, 실행 명령 하기
 
-ec2에 자동 배포하기 : 깃허브 액션 만들기,  로컬에서 git 커밋 / 푸시하면 ec2에 자동으로 배포되어 실행 된다.
+ec2에 자동 배포하기 : 깃허브 액션 만들기,  로컬에서 git 커밋 / 푸시하면, 깃허브액션이 jar 만들어서, ec2에 자동으로 배포하고 실행 된다.
 
 
 --- 
