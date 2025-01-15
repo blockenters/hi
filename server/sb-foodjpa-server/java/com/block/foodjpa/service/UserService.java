@@ -1,5 +1,7 @@
 package com.block.foodjpa.service;
 
+import com.block.foodjpa.config.JwtConfig;
+import com.block.foodjpa.dto.LoginResponse;
 import com.block.foodjpa.dto.UserRequest;
 import com.block.foodjpa.entity.User;
 import com.block.foodjpa.repository.UserRepository;
@@ -13,6 +15,26 @@ public class UserService {
     UserRepository userRepository;
     @Autowired
     PasswordEncoder passwordEncoder;
+    @Autowired
+    JwtConfig jwtConfig;
+
+    public LoginResponse login(UserRequest userRequest){
+        System.out.println("유저 서비스 1");
+        // 회원인지 아닌지 확인
+        if( !userRepository.existsByEmail(userRequest.email) ){
+            throw new RuntimeException();
+        }
+        // DB에서 정보를 가져와서 비번을 확인.
+        User user = userRepository.findByEmail(userRequest.email);
+        if( !passwordEncoder.matches(userRequest.password, user.password) ){
+            throw new RuntimeException();
+        }
+        // 인증토큰 발급
+        String token = jwtConfig.createToken(user.id);
+
+        LoginResponse loginResponse = new LoginResponse(token);
+        return loginResponse;
+    }
 
     public void signUp(UserRequest userRequest){
         // 이미 회원가입 했는지 확인
