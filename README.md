@@ -10,7 +10,15 @@
 
 온라인 서비스 개발 방법 (백엔드와 프론트엔드) : https://vision-ai.tistory.com/entry/On-Premise-%EC%99%80-Cloud-Services
 
+---
+
 ## AI Automation
+
+데이터분석 - 판다스에서 제공하는 다양한 함수들 :
+
+https://pandas.pydata.org/docs/reference/api/pandas.Series.str.upper.html
+
+---
 
 ### 1. Chrome 설치 
 
