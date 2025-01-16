@@ -1,14 +1,15 @@
 package com.block.foodjpa.service;
 
-import com.block.foodjpa.dto.MenuResponse;
-import com.block.foodjpa.dto.RestaurantMenuResponse;
-import com.block.foodjpa.dto.RestaurantResponse;
+import com.block.foodjpa.dto.*;
 import com.block.foodjpa.entity.Menu;
 import com.block.foodjpa.entity.Restaurant;
 import com.block.foodjpa.entity.Review;
 import com.block.foodjpa.repository.MenuRepository;
 import com.block.foodjpa.repository.RestaurantRepository;
+import com.block.foodjpa.repository.ReviewRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -18,6 +19,57 @@ import java.util.Optional;
 public class RestaurantService {
     @Autowired
     RestaurantRepository restaurantRepository;
+    @Autowired
+    ReviewRepository reviewRepository;
+
+    public RestaurantListResponse getAllRestaurants(int page, int size, String category, String keyword){
+
+        PageRequest pageRequest = PageRequest.of(page -1, size);
+        Page<Restaurant> restaurantPage = null;
+
+        if(category == null && keyword != null){
+           restaurantPage =
+                    restaurantRepository.findByNameContainsOrAddressContains(keyword, keyword, pageRequest);
+        }else if(category == null && keyword == null){
+
+        }else if(category != null && keyword == null){
+
+        }else{
+            restaurantPage =
+                    restaurantRepository.findByCategoryAndNameContainsOrCategoryAndAddressContains(category, keyword, category, keyword, pageRequest);
+        }
+
+        ArrayList<RestaurantResponse> restaurantResponseArrayList =
+                new ArrayList<>();
+
+        for( Restaurant restaurant : restaurantPage){
+            RestaurantResponse restaurantResponse =
+                    new RestaurantResponse();
+            restaurantResponse.id = restaurant.id;
+            restaurantResponse.name = restaurant.name;
+            restaurantResponse.category = restaurant.category;
+            restaurantResponse.phone = restaurant.phone;
+            restaurantResponse.address = restaurant.address;
+            restaurantResponse.description = restaurant.description;
+            restaurantResponse.createdAt = restaurant.createdAt.toString();
+            // 리뷰 갯수랑 리뷰 평점은 따로 가져온다.
+            restaurantResponse.reviewCount = restaurant.reviewList.size();
+
+            restaurantResponse.avgRating = reviewRepository.avgRatingByRestaurantId(restaurant.id);
+
+            restaurantResponseArrayList.add(restaurantResponse);
+        }
+
+        PageableResponse pageableResponse =
+                new PageableResponse(page, size, restaurantPage.getTotalElements(), restaurantPage.getTotalPages());
+
+        RestaurantListResponse response =
+                new RestaurantListResponse(restaurantResponseArrayList, pageableResponse);
+        return response;
+
+
+    }
+
 
     public RestaurantMenuResponse getRestaurant(long id){
         Optional<Restaurant> restaurant = restaurantRepository.findById(id);
