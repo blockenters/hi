@@ -108,6 +108,7 @@ ec2에 깃으로 배포하기 : 로컬에서 git 커밋 / 푸시하기, ec2에 g
 
 ec2에 자동 배포하기 : 깃허브 액션 만들기,  로컬에서 git 커밋 / 푸시하면, 깃허브액션이 jar 만들어서, ec2에 자동으로 배포하고 실행 된다.
 
+마지막 실습 JWT, JPA, S3 file upload :  https://docs.google.com/presentation/d/13fGRVX9Xe_WLsk383ziS7Frf93fhyAvscHkP2FlE87s/edit?usp=sharing
 
 --- 
 
