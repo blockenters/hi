@@ -10,6 +10,36 @@
 
 온라인 서비스 개발 방법 (백엔드와 프론트엔드) : https://vision-ai.tistory.com/entry/On-Premise-%EC%99%80-Cloud-Services
 
+## AI Automation
+
+### 1. Chrome 설치 
+
+https://www.google.com/intl/ko/chrome/
+
+메인 브라우저로 설정!
+
+### 2. Anaconda 설치
+
+https://www.anaconda.com/products/individual
+
+### 3. 아나콘다 프롬프트 실행
+
+### 4. 파이썬 가상환경 만들기
+
+$conda create -n 가상환경이름 python=3.10
+
+### 5. 가상환경 실행
+
+$conda activate 가상환경 이름
+
+### 6. 주피터 노트북 실행
+
+$jupyter notebook .
+
+### 7. 가상환경 나오기
+
+$conda deactivate
+
 ---
 
 DB 잘 모르는 분들은 
