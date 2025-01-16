@@ -36,6 +36,8 @@ https://www.anaconda.com/products/individual
 
 $conda create -n 가상환경이름 python=3.10
 
+$conda create -n 가상환경이름 python=3.10 openssl numpy scipy matplotlib ipython scikit-learn pandas pillow jupyter seaborn
+
 ### 5. 가상환경 실행
 
 $conda activate 가상환경 이름
