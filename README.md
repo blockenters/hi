@@ -12,6 +12,44 @@
 
 ---
 
+## AI Automation
+
+데이터분석 - 판다스에서 제공하는 다양한 함수들 : https://pandas.pydata.org/docs/reference/api/pandas.Series.str.upper.html
+
+머신러닝 : https://docs.google.com/presentation/d/1pvgye0Gt5DKgA7Kn5pc4Cfy-D4VtmQTxVIvbxa-GfFc/edit#slide=id.ga8aab8fd2a_0_50
+
+---
+
+### 1. Chrome 설치 
+
+https://www.google.com/intl/ko/chrome/
+
+메인 브라우저로 설정!
+
+### 2. Anaconda 설치
+
+https://www.anaconda.com/products/individual
+
+### 3. 아나콘다 프롬프트 실행
+
+### 4. 파이썬 가상환경 만들기
+
+$conda create -n 가상환경이름 python=3.10
+
+### 5. 가상환경 실행
+
+$conda activate 가상환경 이름
+
+### 6. 주피터 노트북 실행
+
+$jupyter notebook .
+
+### 7. 가상환경 나오기
+
+$conda deactivate
+
+---
+
 DB 잘 모르는 분들은 
 
 AWS RDS 설치 동영상 : https://www.youtube.com/watch?v=GxbvKMKARgY
@@ -78,6 +116,7 @@ ec2에 깃으로 배포하기 : 로컬에서 git 커밋 / 푸시하기, ec2에 g
 
 ec2에 자동 배포하기 : 깃허브 액션 만들기,  로컬에서 git 커밋 / 푸시하면, 깃허브액션이 jar 만들어서, ec2에 자동으로 배포하고 실행 된다.
 
+마지막 실습 JWT, JPA, S3 file upload :  https://docs.google.com/presentation/d/13fGRVX9Xe_WLsk383ziS7Frf93fhyAvscHkP2FlE87s/edit?usp=sharing
 
 --- 
 
