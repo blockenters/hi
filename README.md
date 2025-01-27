@@ -20,7 +20,7 @@
 
 모델 및 스케일러 등을 저장하는 방법 : https://bit.ly/3aMhT0Q
 
-리그레션 실습 1 : https://www.notion.so/1884a24679c08067bc0bdbefd53ee79f?pvs=4
+리그레션 실습 : https://www.notion.so/1884a24679c08067bc0bdbefd53ee79f?pvs=4
 
 ---
 
