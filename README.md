@@ -26,6 +26,8 @@
 
 영화추천 실습데이터 2 : https://drive.google.com/file/d/1NRTrV_poIusFwpky_tNlKNKCOuxRn8BE/view?usp=sharing
 
+우리 가상환경에, StreamLit 설치 : https://streamlit.io
+
 ---
 
 ### 1. Chrome 설치 
