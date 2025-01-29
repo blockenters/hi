@@ -32,6 +32,8 @@ ML 학습
 
 우리 가상환경에, StreamLit 설치 : https://streamlit.io
 
+VSC 설치하고 Copilot Free 설치하기 : https://code.visualstudio.com/
+
 ---
 
 ### 1. Chrome 설치 
