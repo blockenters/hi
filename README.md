@@ -26,6 +26,8 @@ ML 학습
 
 리그레션 실습 : https://www.notion.so/1884a24679c08067bc0bdbefd53ee79f?pvs=4
 
+티처블 머신 데이터 : https://drive.google.com/file/d/1ewwuT0nOuxV9vJ1gqWB6-EL3L_lF25Jn/view?usp=sharing
+
 영화추천 실습데이터 1 : https://drive.google.com/file/d/1awUjOXS84Dndsl6_61Hd1mXrYIVwXlEI/view?usp=sharing
 
 영화추천 실습데이터 2 : https://drive.google.com/file/d/1NRTrV_poIusFwpky_tNlKNKCOuxRn8BE/view?usp=sharing
