@@ -14,13 +14,25 @@
 
 ## AI Automation
 
+파이썬 문법과 라이브러리 학습 
+
 데이터분석 - 판다스에서 제공하는 다양한 함수들 : https://pandas.pydata.org/docs/reference/api/pandas.Series.str.upper.html
+
+ML 학습
 
 머신러닝 : https://docs.google.com/presentation/d/1pvgye0Gt5DKgA7Kn5pc4Cfy-D4VtmQTxVIvbxa-GfFc/edit#slide=id.ga8aab8fd2a_0_50
 
 모델 및 스케일러 등을 저장하는 방법 : https://bit.ly/3aMhT0Q
 
 리그레션 실습 : https://www.notion.so/1884a24679c08067bc0bdbefd53ee79f?pvs=4
+
+영화추천 실습데이터 1 : https://drive.google.com/file/d/1awUjOXS84Dndsl6_61Hd1mXrYIVwXlEI/view?usp=sharing
+
+영화추천 실습데이터 2 : https://drive.google.com/file/d/1NRTrV_poIusFwpky_tNlKNKCOuxRn8BE/view?usp=sharing
+
+우리 가상환경에, StreamLit 설치 : https://streamlit.io
+
+VSC 설치하고 Copilot Free 설치하기 : https://code.visualstudio.com/
 
 ---
 
