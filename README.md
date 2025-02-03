@@ -36,6 +36,8 @@ ML 학습
 
 VSC 설치하고 Copilot Free 설치하기 : https://code.visualstudio.com/
 
+리눅스에서 스트림릿 한글 나오게 : https://luvris2.tistory.com/119#google_vignette
+
 ---
 
 ### 1. Chrome 설치 
