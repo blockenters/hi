@@ -30,6 +30,10 @@ def run_eda():
         st.dataframe(df.corr(numeric_only=True))
 
     st.info('최대 / 최소 데이터 확인하기')
-    st.selectbox('컬럼 선택', df.columns)
-
+    menu2 = ['Age', 'Annual Salary', 'Credit Card Debt', 'Net Worth']
+    selected_column = st.selectbox('컬럼 선택', menu2)
+    st.text('최대값 데이터')
+    st.dataframe( df.loc[ df[selected_column] == df[selected_column].max() , ]) 
+    st.text('최소값 데이터')
+    st.dataframe( df.loc[ df[selected_column] == df[selected_column].min() , ])
 
