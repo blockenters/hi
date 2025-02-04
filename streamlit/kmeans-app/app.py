@@ -5,6 +5,7 @@ from pandas.api.types import is_integer_dtype, is_float_dtype, is_object_dtype
 from sklearn.preprocessing import LabelEncoder, OneHotEncoder
 from sklearn.compose import ColumnTransformer
 from sklearn.cluster import KMeans
+import matplotlib.pyplot as plt
 
 def main():
     st.title('K-Means Clustering App')
@@ -60,13 +61,28 @@ def main():
         else :
             max_k = st.slider('K값 선택(최대 그룹갯수)', min_value= 2, max_value= 10)
             
+        
+        
+        wcss = []
+        for k in range(1, max_k+1) :
+            kmeans = KMeans(n_clusters= k, random_state= 4)
+            kmeans.fit(df_new)
+            wcss.append( kmeans.inertia_ )
 
-        if st.button('WCSS 계산하기') :
-            wcss = []
-            for k in range(1, max_k+1) :
-                kmeans = KMeans(n_clusters= k, random_state= 4)
-                kmeans.fit(df_new)
-                wcss.append( kmeans.inertia_ )
+        fig1 = plt.figure()
+        plt.plot( range(1, max_k+1) ,  wcss )
+        st.pyplot( fig1 ) 
+        
+    
+        st.text('원하는 클러스터링(그룹) 갯수를 입력하세요')
+        k = st.number_input('숫자 입력', min_value=2, max_value= max_k)
+
+        kmeans = KMeans(n_clusters= k, random_state= 4)
+        df['Group'] = kmeans.fit_predict(df_new)
+
+        st.info('그룹 정보가 저장 되었습니다.')
+        st.dataframe( df )
+            
         
 
 if __name__ == '__main__':
