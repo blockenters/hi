@@ -14,7 +14,6 @@
 
 ### 데이터 제공 사이트들 
 
-http://idai.or.kr/data-search
 
 https://www.kaggle.com/
 
