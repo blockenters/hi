@@ -20,20 +20,31 @@ def main():
 
         st.info('Nan 이 있으면 행을 삭제합니다.')
         st.dataframe( df.isna().sum() )
-        df.dropna()
+        df.dropna(inplace=True)
+        df.reset_index(drop=True, inplace=True)
 
         # 3. 유저가 컬럼을 선택할수 있게 한다.
         st.info('K-Means 클러스터링에 사용할 컬럼을 선택해주세요.')
         selected_columns = st.multiselect('컬럼 선택', df.columns)
 
+        if len(selected_columns) == 0 :
+            return
+
         df_new = pd.DataFrame()
         # 4. 각 컬럼이, 문자열인지 숫자인지 확인. 
         for column in selected_columns:
             if is_integer_dtype(df[column]) :
+                print(column + ' : int')
+                print(df[column])
                 df_new[column] = df[column]
+                print(df_new[column])
             elif is_float_dtype(df[column]) :
+                print(column + ' : float')
                 df_new[column] = df[column]
             elif is_object_dtype(df[column]) :
+                print(column + ' : object')
+                print(f'이 컬럼의 유니크 갯수 : {df[column].nunique()}')
+
                 if df[column].nunique() <= 2 :
                     # 레이블 인코딩
                     encoder = LabelEncoder()
@@ -42,7 +53,7 @@ def main():
                     # 원핫 인코딩
                     ct = ColumnTransformer( [('encoder',OneHotEncoder(), [0])] , remainder='passthrough')
                     column_names = sorted( df[column].unique() )
-                    df_new[column_names] = ct.fit_transform(df[column])
+                    df_new[column_names] = ct.fit_transform(df[column].to_frame() )
             else :
                 st.text(f'{column} 컬럼은 K-Means에 사용 불가하므로 제외하겠습니다.')
 
