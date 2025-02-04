@@ -36,7 +36,9 @@ ML 학습
 
 VSC 설치하고 Copilot Free 설치하기 : https://code.visualstudio.com/
 
-리눅스에서 스트림릿 한글 나오게 : https://luvris2.tistory.com/119#google_vignette
+리눅스에서 스트림릿 한글 차트 나오게 : https://luvris2.tistory.com/119#google_vignette
+
+스트림릿 허브에서 한글 차트 나오게 : https://docs.google.com/presentation/d/1mUOqHNOyydxo4skzVLuQ9UFWnHuD2qRWYBeRHfJTFKs/edit?usp=sharing 
 
 ---
 
