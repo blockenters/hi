@@ -1,4 +1,4 @@
-# 하이미디어 KDT
+# 하이미디어 KDT~
 
 작업한 파일 업로드 폴더 : https://drive.google.com/drive/folders/1Kg8Dl4T23f_KoYfmEtOP6sOUeJLvY0UZ?usp=sharing
 
