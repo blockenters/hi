@@ -73,6 +73,8 @@ VSC 설치하고 Copilot Free 설치하기 : https://code.visualstudio.com/
 
 스트림릿 허브에서 한글 차트 나오게 : https://docs.google.com/presentation/d/1mUOqHNOyydxo4skzVLuQ9UFWnHuD2qRWYBeRHfJTFKs/edit?usp=sharing 
 
+Hugging Face : https://www.notion.so/Hugging-Face-1954a24679c080ea9f39e2bccc2ddd70?pvs=4
+
 ---
 
 ### 1. Chrome 설치 
