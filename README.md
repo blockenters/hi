@@ -55,7 +55,7 @@ ML 학습
 
 리그레션 실습 : https://www.notion.so/1884a24679c08067bc0bdbefd53ee79f?pvs=4
 
-파이프라인 사용법
+sklearn 파이프라인 사용법
 
 Time Series 데이터 예측법 
 
