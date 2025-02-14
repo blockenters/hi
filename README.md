@@ -75,7 +75,7 @@ VSC 설치하고 Copilot Free 설치하기 : https://code.visualstudio.com/
 
 Hugging Face : https://www.notion.so/Hugging-Face-1954a24679c080ea9f39e2bccc2ddd70?pvs=4
 
-로컬 가상환경에 라마인덱스 설치하기 : pip install pypdf2 llama-index llama-index-embeddings-huggingface llama-index-llms-huggingface
+로컬 가상환경에 라마인덱스 설치하기 : pip install pypdf2 llama-index llama-index-embeddings-huggingface llama-index-llms-huggingface llama-index-llms-huggingface-api
 
 ---
 
