@@ -77,6 +77,8 @@ Hugging Face : https://www.notion.so/Hugging-Face-1954a24679c080ea9f39e2bccc2ddd
 
 로컬 가상환경에 라마인덱스 설치하기 : pip install pypdf2 llama-index llama-index-embeddings-huggingface llama-index-llms-huggingface llama-index-llms-huggingface-api
 
+UIPath : https://www.notion.so/UIPath-1924a24679c0805e8aacf2f5c63135f9?pvs=4
+
 ---
 
 ### 1. Chrome 설치 
