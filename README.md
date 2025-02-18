@@ -79,6 +79,10 @@ Hugging Face : https://www.notion.so/Hugging-Face-1954a24679c080ea9f39e2bccc2ddd
 
 UIPath : https://www.notion.so/UIPath-1924a24679c0805e8aacf2f5c63135f9?pvs=4
 
+파이썬 flask api server 개발 : pip install flask flask-restful mysql-connector-python
+
+Python 으로 MySQL 작업 : https://docs.google.com/presentation/d/1adHZUnwVZ0jA3rAO68K5MnsndpWhl9IR2q_f70wE5bQ/edit?usp=sharing
+
 ---
 
 ### 1. Chrome 설치 
