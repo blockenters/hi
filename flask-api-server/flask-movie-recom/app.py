@@ -37,7 +37,7 @@ filtered_reviews = review_df.loc[ review_df['movie_id'].isin(valid_movies) , ]
 # print(filtered_reviews)
 
 # 4. 영화-사용자-별점  데이터프레임이 필요하다. 
-#    인덱스에 유저아이디, 컬럼에 영화아이디, 밸류부분에 별점
+#    인덱스에 영화아이디, 컬럼에 유저아이디, 밸류부분에 별점
 movie_user_matrix = filtered_reviews.pivot_table(index= 'movie_id', 
                              columns='user_id',
                              values='rating' ).fillna(0)
@@ -97,7 +97,14 @@ print(movie_stats)
 print(recommendation_df)
 
 recommendation_df.reset_index(inplace=True)
+print('-----------')
+print(recommendation_df)
+print(movie_stats)
+
 recommendation_df = pd.merge(recommendation_df, movie_stats, on='movie_id', how='left' )
+
+print(recommendation_df)
+
 
 # 12. 이미 본 영화는 제외
 recommendation_df = recommendation_df.loc[ ~recommendation_df['movie_id'].isin(watched_movies['movie_id'].tolist()) , ]
