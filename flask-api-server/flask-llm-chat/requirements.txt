@@ -1,7 +1,6 @@
 flask
 flask-restful
 huggingface_hub
-together
 serverless-wsgi
 
 
