@@ -83,6 +83,8 @@ UIPath : https://www.notion.so/UIPath-1924a24679c0805e8aacf2f5c63135f9?pvs=4
 
 Python 으로 MySQL 작업 : https://docs.google.com/presentation/d/1adHZUnwVZ0jA3rAO68K5MnsndpWhl9IR2q_f70wE5bQ/edit?usp=sharing
 
+AWS lamgda 에 flask server 배포 : https://www.notion.so/Flask-API-Server-AWS-Lambda-API-Gateway-1a04a24679c08071a7f3d592a877756e?pvs=4
+
 ---
 
 ### 1. Chrome 설치 
