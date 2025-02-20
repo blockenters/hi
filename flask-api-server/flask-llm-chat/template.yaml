@@ -1,0 +1,38 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: Flask API with Container + API Gateway
+
+Parameters:
+  ImageUri:
+    Type: String
+    Description: "ECR Image URI (컨테이너 이미지 URI)"
+
+Globals:
+  Api:
+    Cors:
+      AllowMethods: "'GET,POST,OPTIONS'"
+      AllowHeaders: "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token'"
+      AllowOrigin: "'*'"
+
+Resources:
+  ChatFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      FunctionName: flask-llm-chat-lambda
+      PackageType: Image
+      ImageUri: !Ref ImageUri
+      Timeout: 120
+      MemorySize: 2048
+      Events:
+        ChatApi:
+          Type: Api
+          Properties:
+            Path: /{proxy+}
+            Method: ANY
+
+Outputs:
+  ApiEndpoint:
+    Description: "API Gateway Base URL"
+    Value: !Sub "https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/Prod"
+
+
