@@ -1,7 +1,6 @@
 from flask_restful import Resource
 from flask import request
 from huggingface_hub import InferenceClient
-from together import Together
 from config import Config
 
 class ChatResource(Resource):
