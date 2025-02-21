@@ -12,7 +12,11 @@
 
 ---
 
-OutSystems API 호출방법 : https://learn.outsystems.com/training/journeys/consuming-rest-api-207/consuming-a-rest-api/odc/7996
+### Outsystems 
+
+UI 개발 : https://learn.outsystems.com/ko-kr/training/journeys/web-developer-662/ui-development/odc/560
+
+API 호출방법 : https://learn.outsystems.com/training/journeys/consuming-rest-api-207/consuming-a-rest-api/odc/7996
 
 ---
 
