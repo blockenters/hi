@@ -12,6 +12,10 @@
 
 ---
 
+OutSystems API 호출방법 : https://learn.outsystems.com/training/journeys/consuming-rest-api-207/writing-data-to-a-rest-api-post-/odc/7989
+
+---
+
 ### 데이터 제공 사이트들 
 
 
