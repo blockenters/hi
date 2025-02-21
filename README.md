@@ -12,7 +12,7 @@
 
 ---
 
-OutSystems API 호출방법 : https://learn.outsystems.com/training/journeys/consuming-rest-api-207/writing-data-to-a-rest-api-post-/odc/7989
+OutSystems API 호출방법 : https://learn.outsystems.com/training/journeys/consuming-rest-api-207/consuming-a-rest-api/odc/7996
 
 ---
 
