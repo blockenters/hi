@@ -31,6 +31,42 @@ ShardCN : https://www.figma.com/community/file/1203061493325953101
 
 ---
 
+### Android 
+
+
+- 안드로이드 스튜디오 설치 : https://developer.android.com/studio
+
+- 안드로이드 머터리얼 아이콘 다운로드 사이트 : https://fonts.google.com/icons
+
+- 첫 안드로이드 샘플앱 개발에 필요한 데이터 : https://block1-image-test.s3.ap-northeast-2.amazonaws.com/dice-app-data.zip
+
+- 샘플앱 모양 : https://docs.google.com/presentation/d/1Bdh05PFg37RVJTpR1e54OyGc3ZiiGIYHge4NDS-eOC0/edit?usp=sharing
+
+- 안드로이드 애니메이션 오픈소스 라이브러리 : https://github.com/daimajia/AndroidViewAnimations
+
+- UI : https://docs.google.com/presentation/d/1gu_ucVXElTSTjUYg2UnKIl50RjNwdPmTvd00uGyOE1Y/edit?usp=sharing
+
+- 실습 2 : https://docs.google.com/presentation/d/1iF3dxBLcCB_CTZEVPRuIMa01HtsYiZmTYcqvUOSFI1E/edit?usp=sharing
+
+- 실습 퀴즈앱 화면 : https://docs.google.com/presentation/d/1THkXAN76ZHT__7IGiBrecC9A-6DsoPaQA1AtadT8Bz8/edit?usp=sharing
+
+- 퀴즈앱 데이터 : https://drive.google.com/file/d/1Nm-iljPT7MQXj-_PKGZApswadCASega-/view?usp=sharing
+
+- 알람소리 파일 : https://block1-image-test.s3.ap-northeast-2.amazonaws.com/alarm.zip
+
+- 실습 3 : https://docs.google.com/presentation/d/1UlvkfNeE90mQo5LfnohCxBTw1k5c4QH4VidOZhzLD48/edit?usp=sharing
+
+- 안드로이드 Activity Life Cycle : https://developer.android.com/guide/components/activities/activity-lifecycle?hl=ko
+
+- 실습 5 : https://docs.google.com/presentation/d/1_s6-IUvFuJmjeaQmsr9OBdii0eQvbLXBF2kF5SoQVvI/edit?usp=sharing
+
+- 실습 7 : https://docs.google.com/presentation/d/1KPEm7OGyJBkId7nojHrImhoP265GzTk-nNTQIG7F08o/edit?usp=sharing
+ 
+- Android Studio 에서 깃허브 연동 : https://docs.google.com/presentation/d/1mmr-fPXbF4thl-Y3clPj_4ngRcY3EDkpIdYuZOWOIcU/edit?usp=drive_link
+
+
+---
+
 ### FlutterFlow
 
 다운로드 : https://www.flutterflow.io/desktop
