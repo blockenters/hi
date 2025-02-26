@@ -12,11 +12,23 @@
 
 ---
 
+---
+
 ### Figma
 
 Figma : https://www.figma.com/
 
 ShardCN : https://www.figma.com/community/file/1203061493325953101 
+
+---
+
+### 세미나 주제
+
+1. Firebase Realtime Database 를 이용한 채팅 기능 구현 
+   (  Firebase + FlutterFlow)
+
+2. AWS Rekognition 에서 페이스 관련된 서비스를 활용한 App 개발 
+   ( 스프링부트 api 서버 + FlutterFlow )
 
 ---
 
