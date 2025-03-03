@@ -60,6 +60,41 @@ ShardCN : https://www.figma.com/community/file/1203061493325953101
  
 - Android Studio 에서 깃허브 연동 : https://docs.google.com/presentation/d/1mmr-fPXbF4thl-Y3clPj_4ngRcY3EDkpIdYuZOWOIcU/edit?usp=drive_link
 
+- 네트워크 처리 표시, 액션바와 메뉴, FAB 을 적용하여 업그레이드 하기
+
+- retrofit 라이브러리 사용법 : https://docs.google.com/presentation/d/1O_p-iWCSxDGU-t0Vh2MKghxzbhQEUlBangQKGYeOxPo/edit?usp=sharing
+
+- gradle 설정은 다음처럼.
+
+- implementation("com.squareup.retrofit2:retrofit:2.11.0")
+
+- implementation("com.squareup.retrofit2:converter-gson:2.11.0")
+
+- implementation("com.squareup.okhttp3:logging-interceptor:4.12.0")
+
+- 실습 8 : https://docs.google.com/presentation/d/1o9pzNaauTWSAInM6Yo6QVbiNGUcNIuVprLOgAZji_DI/edit?usp=sharing
+
+- 실습 8용 URL : https://block-edu.s3.ap-northeast-2.amazonaws.com/posting.json
+  
+- 이미지 처리 라이브러리용 URL1 : https://block-posting.s3.ap-northeast-2.amazonaws.com/2024-05-30T02_16_10.5632781.jpg
+
+- 이미지 처리 라이브러리용 URL2 : https://block-posting.s3.ap-northeast-2.amazonaws.com/2024-05-30T13_19_45.5510251.jpg
+
+- 이미지 처리 라이브러리용 URL3 : https://block-posting.s3.ap-northeast-2.amazonaws.com/2024-05-30T16_23_10.4157593.jpg
+
+- 실습 9 https://docs.google.com/presentation/d/1iZg-czwOLbAuztrNx80AB-fuhB99zAbv1TB2PAl6T34/edit?usp=sharing
+
+- 실습 9용 URL : https://block-edu.s3.ap-northeast-2.amazonaws.com/photos.json
+
+- 안드로이드의 문자, 웹, 전화 등등의 인텐트 사용법 : https://crone.tistory.com/511
+
+- 공유 인텐트 : https://developer.android.com/training/sharing/send?hl=ko#java
+
+- 실습 13 : https://docs.google.com/presentation/d/1y7ovTm8xHTe3CL5CUNb2IWDbV1bmZezWxwkMTz7Y_qE/edit?usp=sharing
+
+- 페이징 처리 : https://docs.google.com/presentation/d/1juyTN904LazzrDfGB3Y-KZrhjg18FWbuZTUepxlXtQ0/edit?usp=sharing
+
+- 우리서버의 메모앱 : https://docs.google.com/presentation/d/1lyCocm7n2cuXrcO4p8hHi2Ec7TsS2Dw7iuknhzYjT_g/edit?usp=sharing
 
 ---
 
