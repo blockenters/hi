@@ -72,6 +72,8 @@ ShardCN : https://www.figma.com/community/file/1203061493325953101
 
 - implementation("com.squareup.okhttp3:logging-interceptor:4.12.0")
 
+- NetworkClient.java 이용해서 개발하기.
+
 - 실습 8 : https://docs.google.com/presentation/d/1o9pzNaauTWSAInM6Yo6QVbiNGUcNIuVprLOgAZji_DI/edit?usp=sharing
 
 - 실습 8용 URL : https://block-edu.s3.ap-northeast-2.amazonaws.com/posting.json
