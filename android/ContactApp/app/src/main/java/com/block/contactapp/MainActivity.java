@@ -33,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
     ContactAdapter adapter;
 
 
-    ActivityResultLauncher<Intent> launcher = registerForActivityResult(
+    public ActivityResultLauncher<Intent> launcher = registerForActivityResult(
             new ActivityResultContracts.StartActivityForResult(),
             new ActivityResultCallback<ActivityResult>() {
                 @Override

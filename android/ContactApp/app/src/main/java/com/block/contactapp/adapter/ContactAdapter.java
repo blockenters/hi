@@ -1,6 +1,7 @@
 package com.block.contactapp.adapter;
 
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,6 +10,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -84,7 +86,27 @@ public class ContactAdapter extends RecyclerView.Adapter<ContactAdapter.ViewHold
                     Intent intent = new Intent(context, UpdateActivity.class);
                     intent.putExtra("contact", contact);
                     intent.putExtra("index", index);
-                    ((MainActivity)context).startActivity(intent);
+                    ((MainActivity)context).launcher.launch(intent);
+                }
+            });
+
+            imgDelete.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+
+                    AlertDialog.Builder builder = new AlertDialog.Builder(context);
+                    builder.setTitle("연락처 삭제");
+                    builder.setMessage("정말 삭제하시겠습니까?");
+                    builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            int index = getAdapterPosition();
+                            contactArrayList.remove(index);
+                            notifyDataSetChanged();
+                        }
+                    });
+                    builder.setNegativeButton("CANCEL", null);
+                    builder.show();
                 }
             });
         }
