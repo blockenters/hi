@@ -88,15 +88,13 @@ ShardCN : https://www.figma.com/community/file/1203061493325953101
 
 - 실습 9용 URL : https://block-edu.s3.ap-northeast-2.amazonaws.com/photos.json
 
-- 안드로이드의 문자, 웹, 전화 등등의 인텐트 사용법 : https://crone.tistory.com/511
-
-- 공유 인텐트 : https://developer.android.com/training/sharing/send?hl=ko#java
-
-- 실습 10 : https://docs.google.com/presentation/d/1y7ovTm8xHTe3CL5CUNb2IWDbV1bmZezWxwkMTz7Y_qE/edit?usp=sharing
-
 - 페이징 처리 : https://docs.google.com/presentation/d/1juyTN904LazzrDfGB3Y-KZrhjg18FWbuZTUepxlXtQ0/edit?usp=sharing
 
 - 우리서버의 메모앱 : https://docs.google.com/presentation/d/1lyCocm7n2cuXrcO4p8hHi2Ec7TsS2Dw7iuknhzYjT_g/edit?usp=sharing
+
+- 안드로이드의 문자, 웹, 전화 등등의 인텐트 사용법 : https://crone.tistory.com/511
+
+- 공유 인텐트 : https://developer.android.com/training/sharing/send?hl=ko#java
 
 ---
 
