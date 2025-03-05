@@ -1,13 +1,20 @@
 package com.block.simplememo;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.View;
+import android.view.WindowManager;
 import android.widget.Toast;
 
-import androidx.activity.EdgeToEdge;
+import androidx.activity.result.ActivityResult;
+import androidx.activity.result.ActivityResultCallback;
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
+import androidx.core.content.ContextCompat;
+import androidx.core.view.WindowCompat;
+import androidx.core.view.WindowInsetsControllerCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -34,9 +41,36 @@ public class MainActivity extends AppCompatActivity {
 
     FloatingActionButton fab;
 
+    ActivityResultLauncher<Intent> launcher = registerForActivityResult(
+            new ActivityResultContracts.StartActivityForResult(),
+            new ActivityResultCallback<ActivityResult>() {
+                @Override
+                public void onActivityResult(ActivityResult o) {
+                    if( o.getResultCode() == 100 ){
+                        Memo memo = (Memo) o.getData().getSerializableExtra("memo");
+                        memoArrayList.add(0,memo);
+                        adapter.notifyDataSetChanged();
+                    }
+                }
+            });
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        
+        // 상태바 투명 설정 (Android 11 이상에서 권장되는 방식)
+        WindowCompat.setDecorFitsSystemWindows(getWindow(), false);
+        getWindow().setStatusBarColor(android.graphics.Color.TRANSPARENT);
+        
+        // 상태바 아이콘 색상 설정 (어두운 배경에 밝은 아이콘)
+        WindowInsetsControllerCompat controller = new WindowInsetsControllerCompat(getWindow(), getWindow().getDecorView());
+        controller.setAppearanceLightStatusBars(false);
+        
+        // 액션바 설정
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().setTitle("SimpleMemo");
+        }
+        
         setContentView(R.layout.activity_main);
 
         // 리사이클러뷰 작업.
@@ -47,6 +81,14 @@ public class MainActivity extends AppCompatActivity {
 
         adapter = new MemoAdapter(MainActivity.this, memoArrayList);
         recyclerView.setAdapter(adapter);
+
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, AddActivity.class);
+                launcher.launch(intent);
+            }
+        });
 
         getNetworkData();
     }
@@ -89,6 +131,13 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+
+    // menu 폴더에 있는, 액션바의 메뉴를, 화면에 표시하는 함수다.
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.main, menu);
+        return true;
+    }
 }
 
 

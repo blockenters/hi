@@ -1,6 +1,7 @@
 package com.block.simplememo.adapter;
 
 import android.content.Context;
+import android.content.DialogInterface;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -8,6 +9,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.block.simplememo.R;
@@ -58,6 +60,27 @@ public class MemoAdapter extends RecyclerView.Adapter<MemoAdapter.ViewHolder> {
             txtTitle = itemView.findViewById(R.id.txtTitle);
             txtBody = itemView.findViewById(R.id.txtBody);
             imgDelete = itemView.findViewById(R.id.imgDelete);
+
+            imgDelete.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    AlertDialog.Builder builder = new AlertDialog.Builder(context);
+                    builder.setTitle("삭제하시겠습니까?");
+                    builder.setMessage("정말 삭제하시겠습니까?");
+                    builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+
+                            int index = getAdapterPosition();
+                            memoArrayList.remove(index);
+                            notifyDataSetChanged();
+                        }
+                    });
+                    builder.setNegativeButton("No", null);
+                    builder.show();
+                }
+            });
+
         }
     }
 }
