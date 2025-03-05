@@ -41,15 +41,18 @@ public class MainActivity extends AppCompatActivity {
                     if( o.getResultCode() == 100 ){
                         String name = o.getData().getStringExtra("name");
                         String phone = o.getData().getStringExtra("phone");
-
                         Contact contact = new Contact(name, phone);
-
                         contactArrayList.add(0, contact);
                         Log.i("Contact Main", "이름은 : " + name + " , 폰번 : " + phone);
                         Log.i("Contact Main", "리스트의 갯수는 : " + contactArrayList.size());
-
                         adapter.notifyDataSetChanged();
-
+                    } else if( o.getResultCode() == 101 ){
+                        Contact contact = (Contact) o.getData().getSerializableExtra("contact");
+                        int index = o.getData().getIntExtra("index", -1);
+                        // 데이터를 바꾼다.
+                        contactArrayList.set(index, contact);
+                        // 데이터를 바꾼후에는 화면에 적용해라.
+                        adapter.notifyDataSetChanged();
                     }
                 }
             });

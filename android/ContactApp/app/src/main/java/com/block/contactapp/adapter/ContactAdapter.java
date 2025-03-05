@@ -83,6 +83,7 @@ public class ContactAdapter extends RecyclerView.Adapter<ContactAdapter.ViewHold
                     // 연락처수정 액티비티를 띄운다.
                     Intent intent = new Intent(context, UpdateActivity.class);
                     intent.putExtra("contact", contact);
+                    intent.putExtra("index", index);
                     ((MainActivity)context).startActivity(intent);
                 }
             });
