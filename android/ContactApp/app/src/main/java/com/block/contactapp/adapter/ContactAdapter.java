@@ -1,6 +1,7 @@
 package com.block.contactapp.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -8,9 +9,12 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.block.contactapp.MainActivity;
 import com.block.contactapp.R;
+import com.block.contactapp.UpdateActivity;
 import com.block.contactapp.model.Contact;
 
 import java.util.ArrayList;
@@ -59,12 +63,29 @@ public class ContactAdapter extends RecyclerView.Adapter<ContactAdapter.ViewHold
         TextView txtName;
         TextView txtPhone;
         ImageView imgDelete;
+        CardView cardView;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             txtName = itemView.findViewById(R.id.txtName);
             txtPhone = itemView.findViewById(R.id.txtPhone);
             imgDelete = itemView.findViewById(R.id.imgDelete);
+            cardView = itemView.findViewById(R.id.cardView);
+
+            cardView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    // 유저가 누른 리스트의 인덱스를 가져온다.
+                    int index = getAdapterPosition();
+                    // 인덱스를 알면, 해당 위치의 데이터를 가져올수 있다.
+                    Contact contact = contactArrayList.get(index);
+
+                    // 연락처수정 액티비티를 띄운다.
+                    Intent intent = new Intent(context, UpdateActivity.class);
+                    intent.putExtra("contact", contact);
+                    ((MainActivity)context).startActivity(intent);
+                }
+            });
         }
     }
 }
