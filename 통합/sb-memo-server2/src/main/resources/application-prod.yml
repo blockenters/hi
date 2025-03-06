@@ -1,0 +1,11 @@
+spring:
+  datasource:
+    url: jdbc:mysql://edu-db.c7kc8oqayzer.ap-northeast-2.rds.amazonaws.com:3306/memo_db
+    username: admin
+    password: 21052105
+  jpa:
+    show-sql: true
+
+
+server:
+  port: 80
