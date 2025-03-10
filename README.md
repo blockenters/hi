@@ -76,7 +76,7 @@ ShardCN : https://www.figma.com/community/file/1203061493325953101
 
 - 실습 8 : https://docs.google.com/presentation/d/1o9pzNaauTWSAInM6Yo6QVbiNGUcNIuVprLOgAZji_DI/edit?usp=sharing
 
-- 실습 8용 URL : https://block-edu.s3.ap-northeast-2.amazonaws.com/test_list.json
+- 실습 8용 URL : https://block-edu.s3.ap-northeast-2.amazonaws.com/posting.json
   
 - 이미지 처리 라이브러리용 URL1 : https://block-posting.s3.ap-northeast-2.amazonaws.com/2024-05-30T02_16_10.5632781.jpg
 
