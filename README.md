@@ -86,7 +86,7 @@ ShardCN : https://www.figma.com/community/file/1203061493325953101
 
 - 실습 9 https://docs.google.com/presentation/d/1iZg-czwOLbAuztrNx80AB-fuhB99zAbv1TB2PAl6T34/edit?usp=sharing
 
-- 실습 9용 URL : https://block-edu.s3.ap-northeast-2.amazonaws.com/photos.json
+- 실습 9용 URL : https://block-edu.s3.ap-northeast-2.amazonaws.com/test_list.json
 
 - 페이징 처리 : https://docs.google.com/presentation/d/1juyTN904LazzrDfGB3Y-KZrhjg18FWbuZTUepxlXtQ0/edit?usp=sharing
 
