@@ -96,6 +96,10 @@ ShardCN : https://www.figma.com/community/file/1203061493325953101
 
 - 공유 인텐트 : https://developer.android.com/training/sharing/send?hl=ko#java
 
+- 카메라와 앨범 사용하기 : android 폴더의 파일들 참고.
+
+- 카메라/앨범 사용에 필요한 라이브러리 : implementation("commons-io:commons-io:2.4")
+
 ---
 
 ### FlutterFlow
