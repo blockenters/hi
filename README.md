@@ -100,6 +100,14 @@ ShardCN : https://www.figma.com/community/file/1203061493325953101
 
 - 카메라/앨범 사용에 필요한 라이브러리 : implementation("commons-io:commons-io:2.4")
 
+- 우리서버의 포스팅앱 : https://docs.google.com/presentation/d/1wKcb0QAeAdUY4W8YHZZaUhARrmrYMdyWSHvhfNPZZ0U/edit?usp=sharing
+
+- 구글맵 공식 페이지 : https://developers.google.com/maps/documentation/android-sdk/config?hl=ko
+
+- 위치기반 실습1 : https://docs.google.com/presentation/d/1-6sKk0eICCjfmejyLGe6Kw_bfOP9l17BEUyz48vmE74/edit?usp=sharing
+
+- 위치기반 실습2 : https://docs.google.com/presentation/d/13PAODc16my9K_qOU-Xs4N7QASkDXCR6jN3hmtEwk0-E/edit?usp=sharing
+
 ---
 
 ### FlutterFlow
