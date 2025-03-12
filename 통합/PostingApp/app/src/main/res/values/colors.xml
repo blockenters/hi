@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    
+    <!-- 트렌디한 색상 -->
+    <color name="colorPrimary">#6C63FF</color>
+    <color name="colorPrimaryDark">#5A52E0</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="textColorPrimary">#333333</color>
+    <color name="textColorSecondary">#757575</color>
+    <color name="backgroundColor">#FAFAFA</color>
+    <color name="inputBorderColor">#E0E0E0</color>
+    <color name="loginButtonColor">#2196F3</color>
+</resources>

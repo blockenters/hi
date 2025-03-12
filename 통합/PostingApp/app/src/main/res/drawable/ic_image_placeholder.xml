@@ -1,0 +1,26 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="120dp"
+    android:height="120dp"
+    android:viewportWidth="120"
+    android:viewportHeight="120">
+    
+    <!-- 배경 -->
+    <path
+        android:fillColor="#EEEEEE"
+        android:pathData="M0,0h120v120h-120z" />
+    
+    <!-- 산 모양 -->
+    <path
+        android:fillColor="#DDDDDD"
+        android:pathData="M0,120 L40,60 L60,80 L85,40 L120,90 L120,120 Z" />
+    
+    <!-- 해/달 모양 -->
+    <path
+        android:fillColor="#CCCCCC"
+        android:pathData="M85,30 A15,15 0 1,1 85,29.9" />
+        
+    <!-- 이미지 아이콘 -->
+    <path
+        android:fillColor="#AAAAAA"
+        android:pathData="M50,50 L50,70 L70,70 L70,50 Z" />
+</vector> 
