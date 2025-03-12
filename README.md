@@ -107,6 +107,8 @@ ShardCN : https://www.figma.com/community/file/1203061493325953101
 
 - 이미지 처리 라이브러리용 URL3 : https://block-posting.s3.ap-northeast-2.amazonaws.com/2024-05-30T16_23_10.4157593.jpg
 
+- Glide 라이브러리 : implementation("com.github.bumptech.glide:glide:4.16.0")
+
 - 실습 9 https://docs.google.com/presentation/d/1iZg-czwOLbAuztrNx80AB-fuhB99zAbv1TB2PAl6T34/edit?usp=sharing
 
 - 실습 9용 URL : https://block-edu.s3.ap-northeast-2.amazonaws.com/test_list.json
