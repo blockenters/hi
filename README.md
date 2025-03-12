@@ -21,7 +21,7 @@
 
 내용 : 분석 예측 시스템 개발 ( 데이터를 기반으로 분석 시스템을 스트림릿으로 개발 )
 
-데이터 : 
+데이터 : https://block-edu.s3.ap-northeast-2.amazonaws.com/%EA%B3%A0%EA%B0%9Ddb_%ED%99%95%EC%9E%A5%EB%B3%B83.csv
 
 ## 미니프로젝트 2
 
