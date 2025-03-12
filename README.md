@@ -17,6 +17,8 @@
 
 ---
 
+프로젝트 보고서 : https://block-edu.s3.ap-northeast-2.amazonaws.com/%5B%EB%B3%84%EC%B2%A82-2%5D+%ED%8C%80%EB%B3%84+%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8+%EA%B2%B0%EA%B3%BC%EB%B3%B4%EA%B3%A0%EC%84%9C.pptx
+
 ## 미니프로젝트 1
 
 내용 : 분석 예측 시스템 개발 ( 데이터를 기반으로 분석 시스템을 스트림릿으로 개발 )
