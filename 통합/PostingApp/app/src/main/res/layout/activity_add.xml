@@ -54,26 +54,26 @@
             android:padding="24dp">
 
             <ImageView
-                android:id="@+id/img"
+                android:id="@+id/imageView"
                 android:layout_width="0dp"
                 android:layout_height="200dp"
                 android:background="#F5F5F5"
-                android:scaleType="centerInside"
+                android:scaleType="centerCrop"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:srcCompat="@android:drawable/ic_menu_gallery" />
 
             <ImageButton
-                android:id="@+id/addImageButton"
+                android:id="@+id/btnCamera"
                 android:layout_width="48dp"
                 android:layout_height="48dp"
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="8dp"
                 android:background="@drawable/ic_add_circle"
                 android:contentDescription="이미지 추가"
-                app:layout_constraintBottom_toBottomOf="@+id/img"
-                app:layout_constraintEnd_toEndOf="@+id/img"
+                app:layout_constraintBottom_toBottomOf="@+id/imageView"
+                app:layout_constraintEnd_toEndOf="@+id/imageView"
                 app:tint="@color/colorPrimary" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
@@ -112,7 +112,7 @@
                 app:startIconTint="@color/colorPrimary">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/contentEditText"
+                    android:id="@+id/editContent"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="top"
@@ -125,7 +125,7 @@
     </com.google.android.material.card.MaterialCardView>
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/postButton"
+        android:id="@+id/btnSave"
         android:layout_width="0dp"
         android:layout_height="60dp"
         android:layout_marginTop="32dp"

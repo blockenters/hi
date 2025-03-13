@@ -74,7 +74,7 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.ViewHolder> {
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
-            img = itemView.findViewById(R.id.img);
+            img = itemView.findViewById(R.id.imageView);
             txtContent = itemView.findViewById(R.id.txtContent);
             txtEmail = itemView.findViewById(R.id.txtEmail);
             txtCreatedAt = itemView.findViewById(R.id.txtCreatedAt);

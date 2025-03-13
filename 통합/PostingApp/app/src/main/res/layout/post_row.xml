@@ -15,7 +15,7 @@
         android:padding="16dp">
 
         <ImageView
-            android:id="@+id/img"
+            android:id="@+id/imageView"
             android:layout_width="80dp"
             android:layout_height="80dp"
             android:scaleType="centerCrop"
@@ -36,7 +36,7 @@
             android:textSize="16sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toStartOf="@+id/imgLike"
-            app:layout_constraintStart_toEndOf="@+id/img"
+            app:layout_constraintStart_toEndOf="@+id/imageView"
             app:layout_constraintTop_toTopOf="parent"
             tools:text="관광지가 최고다" />
 
@@ -51,7 +51,7 @@
             android:textColor="@color/textColorSecondary"
             android:textSize="14sp"
             app:layout_constraintEnd_toEndOf="@+id/txtContent"
-            app:layout_constraintStart_toEndOf="@+id/img"
+            app:layout_constraintStart_toEndOf="@+id/imageView"
             app:layout_constraintTop_toBottomOf="@+id/txtContent"
             tools:text="ccc@naver.com" />
 
@@ -64,7 +64,7 @@
             android:textColor="@color/textColorSecondary"
             android:textSize="14sp"
             app:layout_constraintEnd_toEndOf="@+id/txtContent"
-            app:layout_constraintStart_toEndOf="@+id/img"
+            app:layout_constraintStart_toEndOf="@+id/imageView"
             app:layout_constraintTop_toBottomOf="@+id/txtEmail"
             tools:text="2023-01-17 00:38:21" />
 

@@ -5,6 +5,7 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -66,11 +67,25 @@ public class MainActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(new LinearLayoutManager(MainActivity.this));
         btnAdd = findViewById(R.id.btnAdd);
 
+        btnAdd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, AddActivity.class);
+                startActivity(intent);
+            }
+        });
+
         adapter = new PostAdapter(MainActivity.this, postingArrayList);
         recyclerView.setAdapter(adapter);
 
-        getNetworkData();
 
+
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        getNetworkData();
     }
 
     private void getNetworkData() {
