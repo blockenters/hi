@@ -25,11 +25,20 @@
 
 데이터 : https://block-edu.s3.ap-northeast-2.amazonaws.com/%EA%B3%A0%EA%B0%9Ddb_%ED%99%95%EC%9E%A5%EB%B3%B83.csv
 
+프로젝트 발표 : 3월 20일 
+
+프로젝트 결과물 컨펌 및 제출 : 3월 21일 
+
 ## 미니프로젝트 2
 
 내용 : 판매현황 관리 자동화 및 추천 시스템 개발 ( 데이터를 기반으로 분석 시스템을 스트림릿으로 개발 )
 
 데이터 : https://block-edu.s3.ap-northeast-2.amazonaws.com/%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8+%EB%8D%B0%EC%9D%B4%ED%84%B0.zip
+
+프로젝트 발표 : 3월 27일 
+
+프로젝트 결과물 컨펌 및 제출 : 3월 28일 
+
 
 ## 메인프로젝트 
 
