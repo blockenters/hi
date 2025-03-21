@@ -51,6 +51,12 @@
 
 Figma : https://www.figma.com/
 
+Simple Design System : https://www.figma.com/community/file/1380235722331273046
+
+Material 3 Design Kit : https://www.figma.com/community/file/1035203688168086460
+
+Bootstrap 5 UI Kit :  https://www.figma.com/community/file/876022745968684318
+
 ShardCN : https://www.figma.com/community/file/1203061493325953101 
 
 ---
